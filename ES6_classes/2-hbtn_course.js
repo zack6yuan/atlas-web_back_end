@@ -12,7 +12,7 @@ export default class HolbertonCourse {
   // Setter for name
   set name(name) {
     if (typeof name !== 'string') {
-      throw new TypeError("name must be a string");
+      throw new TypeError('name must be a string');
     }
     this._name = name;
   }
