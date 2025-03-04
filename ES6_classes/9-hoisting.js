@@ -44,3 +44,5 @@ export class StudentHolberton {
 
 
 export const listOfStudents = [student1, student2, student3, student4, student5];
+
+// need to fix this code to make it work
