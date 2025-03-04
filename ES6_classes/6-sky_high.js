@@ -5,7 +5,14 @@ export default class SkyHighBuilding {
     this.floors = floors; // number
   }
 
-  set sqft(sqft) {
-    if (typeof sqft !== 'number')
+  get sqft() {
+    return this.sqft;
   }
+
+  get floors() {
+    return this.floors;
+  }
+
+  // Override the method named evacuationWarningMessage and return
+  // the following string Evacuate slowly the NUMBER_OF_FLOORS floors.
 }
