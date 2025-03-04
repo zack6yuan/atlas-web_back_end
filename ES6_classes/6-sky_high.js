@@ -6,11 +6,11 @@ export default class SkyHighBuilding {
   }
 
   get sqft() {
-    return this.sqft;
+    return this._sqft;
   }
 
   get floors() {
-    return this.floors;
+    return this._floors;
   }
 
   // Override the method named evacuationWarningMessage and return
