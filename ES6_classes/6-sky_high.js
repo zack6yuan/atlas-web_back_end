@@ -13,6 +13,7 @@ export default class SkyHighBuilding {
     return this._floors;
   }
 
-  // Override the method named evacuationWarningMessage and return
-  // the following string Evacuate slowly the NUMBER_OF_FLOORS floors.
+  evacuationWarningMessage() {
+    return `Evacuate slowly the ${this.floors} floors.`;
+  }
 }
