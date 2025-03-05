@@ -5,6 +5,6 @@ export default class Airport {
   }
 
   AirportDetails() {
-    return `_name: '${this.name}', _code: '${this.code}'`; // not correct
+    return `_name: '${this._name}', _code: '${this._code}'`; // not correct
   }
 }
