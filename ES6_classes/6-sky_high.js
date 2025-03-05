@@ -5,8 +5,22 @@ export default class SkyHighBuilding extends Building {
     this.floors = floors; // number
   }
 
+  set sqft(sqft) {
+    if (typeof sqft !== 'number') {
+      throw new TypeError('sqft must be a number');
+    }
+    this._sqft = sqft;
+  }
+
   get sqft() {
     return this._sqft;
+  }
+
+  set floors(floors) {
+    if (typeof floors !== 'number') {
+      throw new TypeError('floors must be a number');
+    }
+    this._floors = floors;
   }
 
   get floors() {
