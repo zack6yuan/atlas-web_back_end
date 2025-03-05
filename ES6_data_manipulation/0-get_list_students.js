@@ -19,5 +19,3 @@ export default function getListStudents() {
 
   return array;
 }
-
-// not correct
