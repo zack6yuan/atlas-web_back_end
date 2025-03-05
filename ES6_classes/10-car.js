@@ -9,6 +9,5 @@ export default class Car {
     return new Car();
   }
   
-  // I believe we need to check if the new object
-  // of class 'Car' has successfully been created.
+  
 }
