@@ -1,4 +1,4 @@
-export default function getListStudents {
+export default function getListStudents() {
   const array = [
     {
       firstName: 'Guillaume',
@@ -17,7 +17,7 @@ export default function getListStudents {
     }
   ]
 
-  return `id: ${id}, firstName: '${firstName}', location: '${location}'`
+  return array;
 }
 
 // not correct
