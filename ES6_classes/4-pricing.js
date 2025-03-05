@@ -32,11 +32,11 @@ export default class Pricing {
     return this._currency;
   }
 
-  displayFullPrice(amount, name, code) {
-    return `${amount} ${name} (${code})`;
+  displayFullPrice() {
+    return `${this.amount} ${this.name} (${this.code})`;
   }
 
   convertPrice(amount, conversionRate) {
-    return amount * conversionRate;
+    return this.amount * conversionRate;
   }
 }
