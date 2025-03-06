@@ -1,3 +1,3 @@
-export default function getListStudentIds {
+export default function getListStudentIds() {
   
 }
