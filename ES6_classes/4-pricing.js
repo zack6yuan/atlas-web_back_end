@@ -30,7 +30,7 @@ export default class Pricing {
   }
 
   displayFullPrice() {
-    return(`${this.amount} ${this.currency}`)
+    return(`${this._amount} ${this._currency}`)
   }
 
   static convertPrice(amount, conversionRate) {
