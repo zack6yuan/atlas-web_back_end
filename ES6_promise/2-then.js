@@ -9,5 +9,8 @@ export default function handleResponseFromAPI(promise) {
     } else {
       reject(new Error)
     }
+    .finally() {
+      console.log('Got a response from the API');
+    }
   })
 }
