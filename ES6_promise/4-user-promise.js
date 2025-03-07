@@ -7,7 +7,7 @@ export default function signUpUser(firstName, lastName) {
       };
       resolve(names);
     } else {
-      reject(new Error('firstName and lastName are not valid.'))
-    };
-  })
+      reject(new Error('firstName and lastName are not valid.'));
+    }
+  });
 }
