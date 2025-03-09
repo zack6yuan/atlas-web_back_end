@@ -1,3 +1,3 @@
-export default function createInt8TypedArray {
-  
+export default function createInt8TypedArray(length, position, value) {
+    
 }
