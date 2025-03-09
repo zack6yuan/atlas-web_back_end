@@ -9,8 +9,12 @@ export default class Car {
     const newCar = new Car(
       this._brand,
       this._motor,
-      this._color
+      this._color,
     )
-    return newCar
+    if (newCar instanceof Car) {
+      return true
+    } else {
+      return false
+    }
   }
 }
