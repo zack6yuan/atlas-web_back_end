@@ -6,15 +6,16 @@ export default class Pricing {
     this.currency = currency; // currency
   }
 
-  set sqft(sqft) {
-    if (typeof sqft !== 'number') {
-      throw new TypeError('sqft must be a number');
+  set amount(amount) {
+    if (amount instanceof amount) {
+      this._amount = amount;
+    } else {
+      throw new TypeError('amount must be a number');
     }
-    this._sqft = sqft;
   }
 
-  get sqft() {
-    return this._sqft;
+  get amount() {
+    return this._currency;
   }
 
   set currency(currency) {
@@ -30,7 +31,7 @@ export default class Pricing {
   }
 
   displayFullPrice() {
-    return(`${this.amount} ${this.currency}`)
+    return(`${this._amount} ${this._currency}`)
   }
 
   static convertPrice(amount, conversionRate) {
