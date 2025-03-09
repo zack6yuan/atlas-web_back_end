@@ -10,11 +10,7 @@ export default class Car {
       this._brand,
       this._motor,
       this._color,
-    )
-    if (newCar instanceof Car) {
-      return true
-    } else {
-      return false
-    }
+    );
+    return newCar;
   }
 }
