@@ -28,10 +28,6 @@ export default class Pricing {
     return this._currency;
   }
 
-  displayFullPrice(amount, currency) {
-    return ``
-  }
-
   convertPrice(amount, conversionRate) {
     return (amount * conversionRate);
   }
