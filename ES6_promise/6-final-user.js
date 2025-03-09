@@ -9,7 +9,7 @@ export default function handleProfileSignup(firstName, lastName, fileName) {
     }
     resolve(myPromise);
     const array = {
-      status:
+      status: 
       value:
     }
     return array;
