@@ -1,3 +1,5 @@
-export default function getStudentIdsSum {
-  
+import getListStudents from "./0-get_list_students";
+
+export default function getStudentIdsSum() {
+
 }

@@ -1,10 +1,10 @@
 export default class Airport {
   constructor(name, code) {
-    this._name = name // string
-    this._code = code //string
+    this._name = name;
+    this._code = code;
   }
 
-  AirportDetails() {
-    return `_name: '${this._name}', _code: '${this._code}'`; // not correct
+  toString() {
+    return `[object ${this._code}]`;
   }
 }

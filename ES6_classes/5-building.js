@@ -3,18 +3,15 @@ export default class Building {
     this.sqft = sqft; // number
   }
 
-  evacuationWarningMessage() {
+  get sqft() {
+    return this.sqft;
+  }
+
+  if (evacuationWarningMessage not instanceof Building) {
     throw new Error('Class extending Building must override evacuationWarningMessage');
   }
 
-  set sqft(sqft) {
-    if (typeof sqft !== 'number') {
-      throw new TypeError('sqft must be a number');
-    }
-    this._sqft = sqft;
-  }
-
-  get sqft() {
-    return this._sqft;
+  evacuationWarningMessage() {
+    throw new Error('Class extending Building must override evacuationWarningMessage');
   }
 }
