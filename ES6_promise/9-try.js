@@ -5,11 +5,13 @@ export default function guardrail(mathFunction) {
   try {
     const value = mathFunction();
     // append value to array
-    queue.push(value, message);
+    queue.push(value);
   } catch(error) {
     // push error message
-    queue.push('Error', message);
+    queue.push(error);
   } finally {
+    // in all cases, the message runs
+    queue.push(message);
     return queue;
   }
 }
