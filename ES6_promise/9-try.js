@@ -8,9 +8,9 @@ export default function guardrail(mathFunction) {
     queue.push(value);
   } catch (error) {
     queue.push('Error: cannot divide by 0');
-  } finally { /* eslint-disable-line no-unsafe-finally */
+  } finally {
     // in all cases, the message runs
     queue.push(message);
-    return queue;
   }
+  return queue;
 }
