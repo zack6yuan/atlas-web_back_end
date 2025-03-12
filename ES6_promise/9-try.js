@@ -7,8 +7,6 @@ export default function guardrail(mathFunction) {
     // append value to array
     queue.push(value);
   } catch(error) {
-    // push error message
-    queue.push('error');
   } finally {
     // in all cases, the message runs
     queue.push(message);
