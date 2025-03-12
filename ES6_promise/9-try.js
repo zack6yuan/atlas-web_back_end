@@ -1,4 +1,3 @@
-/* eslint-disable-line no-unsafe-finally */
 export default function guardrail(mathFunction) {
   // array to push values to
   const queue = [];
@@ -9,7 +8,7 @@ export default function guardrail(mathFunction) {
     queue.push(value);
   } catch (error) {
     queue.push('Error: cannot divide by 0');
-  } finally {
+  } finally { /* eslint-disable-line no-unsafe-finally */
     // in all cases, the message runs
     queue.push(message);
     return queue;
