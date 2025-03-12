@@ -1,3 +1,4 @@
+/* eslint-disable-line no-unsafe-finally */
 export default function guardrail(mathFunction) {
   // array to push values to
   const queue = [];
