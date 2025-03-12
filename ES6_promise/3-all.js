@@ -1,8 +1,6 @@
-import { createUser } from "./utils";
-import { uploadPhoto } from "./utils";
+import { uploadPhoto } from './utils';
+import { createUser } from './utils';
 
 function handleProfileSignup() {
-  return new Promise((resolve, reject) => {
-    
-  })
+  
 }

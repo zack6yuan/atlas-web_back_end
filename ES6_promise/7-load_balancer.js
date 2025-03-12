@@ -1,9 +1,4 @@
 export default function loadBalancer(chinaDownload, USDownload) {
-  const myPromise = new Promise((resolve, reject) => {
-    if (chinaDownload && USDownload) {
-      resolve(myPromise);
-    } else {
-      reject(new Error('error'))
-    }
-  })
+  // promise.any => return the promise that resolves first
+  Promise.any(chinaDownload, USDownload)
 }
