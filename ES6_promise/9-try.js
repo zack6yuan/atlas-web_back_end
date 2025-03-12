@@ -1,15 +1,15 @@
 export default function guardrail(mathFunction) {
   // array to push values to
   const queue = [];
-  const message = 'Guardrail was processed'
+  const message = 'Guardrail was processed';
   try {
-    const value = mathFunction()
+    const value = mathFunction();
     // append value to array
     queue.push(value, message);
   } catch(error) {
     // push error message
-    queue.push('Error', message)
+    queue.push('Error', message);
   } finally {
-    queue.push(message)
+    return queue;
   }
 }
