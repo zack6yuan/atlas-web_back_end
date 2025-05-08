@@ -13,6 +13,7 @@ Generator Format:
     - ReturnType --> Value type that the generator will return
 """
 
+
 async def async_generator() -> Generator[float, None, None]:
     """
     Parameters:
