@@ -1,4 +1,13 @@
 #!/usr/bin/env python3
-# Method: Return string representation of float
+"""
+A function that returns the string representation of a float
+"""
 def to_str(n: float) -> str:
+    """
+    Parameters:
+    n (float) --> float value
+
+    Returns:
+    String representation of the float
+    """
     return (str(n))
