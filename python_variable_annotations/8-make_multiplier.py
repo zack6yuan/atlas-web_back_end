@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Type-annotated function that takes a float
-Returns a function taht multiplies a float by multiplier
+Returns a function that multiplies a float by multiplier
 """
 from typing import Union
 
