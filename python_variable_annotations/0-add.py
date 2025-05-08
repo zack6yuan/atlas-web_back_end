@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
-# Method: Return sum using type annotation
+"""
+A function that takes two inputs as floats and returns the sum
+"""
 def add(a: float, b: float) -> float:
     """
     Parameters:
