@@ -2,8 +2,7 @@
 """
 Type-annotated function that takes a float
 Returns a function that multiplies a float by multiplier
-"""
-from typing import Union
+""" 
 
 
 def make_multiplier(multiplier: float):
@@ -14,3 +13,4 @@ def make_multiplier(multiplier: float):
     Returns:
     New Function that multiples a float by multiplier
     """
+    def 
