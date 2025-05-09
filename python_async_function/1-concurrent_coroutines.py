@@ -17,5 +17,3 @@ async def wait_n(n: int, max_delay: int) -> List[float]:
     Returns:
     List of all the delays in float values in ascending order
     """
-    for item in range(n):
-        
