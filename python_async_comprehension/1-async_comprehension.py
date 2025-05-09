@@ -19,8 +19,4 @@ async def async_comprehension() -> List[float]:
     Returns:
     The list of delays
     """
-    list_delays = []
-    async for delay in async_generator():
-        list_delays.append(delay)
-    
-    return list_delays
+    return (x async for x in async_generator())
