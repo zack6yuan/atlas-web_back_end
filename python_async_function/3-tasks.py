@@ -13,8 +13,11 @@ def task_wait_random(max_delay: int) -> asyncio.Task:
     Parameters:
     max_delay (integer) --> integer accepted as input
 
+    Methods:
+    asyncio.create_task --> creates an asyncio.Task object
+
     Returns:
-    asyncio.Task --> used to manage coroutines
-    a float value is retuned
+    asyncio.Task (float) --> used to manage coroutines
     """
-    return asyncio.Task
+    new_task = asyncio.create_task(wait_random(max_delay))
+    return new_task
