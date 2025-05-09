@@ -17,6 +17,5 @@ async def wait_n(n: int, max_delay: int) -> List[float]:
     Returns:
     List of all the delays in float values in ascending order
     """
-    value = random.uniform(0, max_delay)
-    await asyncio.sleep(value)
-    return value
+    for item in range(n):
+        
