@@ -22,6 +22,8 @@ async def measure_runtime() -> float:
     asyncio.gather --> execute multiple coroutines,
     and wait for them to complete
 
+    imported "gather" from asyncio instead of asyncio.gather
+
     Returns:
     Total time for the execution of the coroutine
     """
