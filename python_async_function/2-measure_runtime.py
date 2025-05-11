@@ -7,7 +7,7 @@ import time
 
 wait_n = __import__('1-concurrent_coroutines').wait_n
 
-async def measure_time(n: int, max_delay: int) -> float:
+def measure_time(n: int, max_delay: int) -> float:
     """
     Parameters:
     n (integer) --> measures execution time
@@ -21,7 +21,7 @@ async def measure_time(n: int, max_delay: int) -> float:
     total_time / n (float)
     """
     start = time.perf_counter() # Start time marker
-    await (wait_n(n, max_delay)) # Await execution
+    asyncio.run(wait_n(n, max_delay)) # Await execution
     end = time.perf_counter() # End time marker
 
     total_time = end - start # Calculate total time
