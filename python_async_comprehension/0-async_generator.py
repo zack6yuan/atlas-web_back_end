@@ -8,9 +8,9 @@ from typing import Generator
 
 """
 Generator Format:
-    - YieldType --> Value that the generator will yield
-    - SendType --> Value type that is sent to the generator
-    - ReturnType --> Value type that the generator will return
+    [0] YieldType --> Value that the generator will yield
+    [1] SendType --> Value type that is sent to the generator
+    [2] ReturnType --> Value type that the generator will return
 """
 
 

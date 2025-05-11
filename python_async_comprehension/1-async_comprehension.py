@@ -2,7 +2,6 @@
 """
 Coroutine that collects 10 random numbers, then returns the numbers
 """
-import asyncio
 from typing import List
 
 
