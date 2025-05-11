@@ -26,7 +26,7 @@ async def async_generator() -> Generator[float, None, None]:
 
     Returns:
     - Random number (float) between 0 and 10
-    """
+    ""
     for x in range(0, 10):
         await asyncio.sleep(1)
         yield (random.uniform(0, 10))
