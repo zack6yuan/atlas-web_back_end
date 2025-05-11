@@ -25,7 +25,7 @@ async def measure_runtime() -> float:
     imported "gather" from asyncio instead of asyncio.gather
 
     * --> passing each argument as individual arguments.
-    
+
     Instead of executing each individually, we unpack the list
     of all the processes to be completed
 
@@ -34,11 +34,11 @@ async def measure_runtime() -> float:
     """
     start = time.perf_counter()  # Start time marker
     await gather(*
-            [async_comprehension(),
-            async_comprehension(),
-            async_comprehension(),
-            async_comprehension()]
-    )
+                 [async_comprehension(),
+                  async_comprehension(),
+                  async_comprehension(),
+                  async_comprehension()]
+                 )
     end = time.perf_counter()  # End time marker
 
     process_results = end - start  # Total time calculation
