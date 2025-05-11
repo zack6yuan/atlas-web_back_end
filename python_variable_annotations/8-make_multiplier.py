@@ -6,7 +6,7 @@ Returns a function that multiplies a float by multiplier
 """ 
 
 
-def make_multiplier(multiplier: float) -> Callable[float, float]:
+def make_multiplier(multiplier: float) -> Callable[[float], float]:
     """
     Parameters:
     multiplier (float) --> float value
