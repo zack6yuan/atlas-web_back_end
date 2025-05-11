@@ -8,16 +8,15 @@ import asyncio
 wait_random = __import__('0-basic_async_syntax').wait_random
 
 
-def task_wait_random(max_delay: int) -> asyncio.Task:
+def task_wait_n(max_delay: int) -> asyncio.Task:
     """
     Parameters:
     max_delay (integer) --> integer accepted as input
 
     Methods:
-    asyncio.create_task --> creates an asyncio.Task object
+    call task_wait_random
 
     Returns:
     asyncio.Task (float) --> used to manage coroutines
     """
-    new_task = asyncio.create_task(wait_random(max_delay))
-    return new_task
+    task_wait_random()
