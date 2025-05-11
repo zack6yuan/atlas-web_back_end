@@ -4,6 +4,7 @@ Coroutine that executes async_comprehension
 4 times in parallel using asyncio.gather
 """
 import asyncio
+from asyncio import gather
 import time
 
 
@@ -25,7 +26,7 @@ async def measure_runtime() -> float:
     Total time for the execution of the coroutine
     """
     start = time.perf_counter()  # Start time marker
-    await asyncio.gather(
+    await gather(
         async_comprehension(),
         async_comprehension(),
         async_comprehension(),
