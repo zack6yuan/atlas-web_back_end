@@ -17,7 +17,7 @@ async def measure_runtime() -> float:
     Methods:
     While async_comprehension is executed,
     start a time counter and log
-    
+
     asyncio.gather --> execute multiple coroutines,
     and wait for them to complete
 
@@ -25,12 +25,7 @@ async def measure_runtime() -> float:
     Total time for the execution of the coroutine
     """
     start = time.perf_counter()  # Start time marker
-    await asyncio.gather(
-        async_comprehension(),
-        async_comprehension(),
-        async_comprehension(),
-        async_comprehension()
-    )
+    await asyncio.gather(async_comprehension(), async_comprehension(), async_comprehension(), async_comprehension())
     end = time.perf_counter()  # End time marker
 
     process_results = end - start  # Total time calculation
