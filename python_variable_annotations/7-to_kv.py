@@ -13,6 +13,7 @@ def to_kv(k: str, v: Union[int, float]) -> Tuple[str, float]:
     v (int / float) --> int / float value
     
     Method:
+    Union -> Handle multiple types
     Insert k as the first element of the tuple
     Retrieve the second elemenet by calculating the
     square of the int / float (v)
