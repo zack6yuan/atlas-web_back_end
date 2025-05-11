@@ -34,10 +34,10 @@ async def measure_runtime() -> float:
     """
     start = time.perf_counter()  # Start time marker
     await gather(*
-        [async_comprehension(),
-        async_comprehension(),
-        async_comprehension(),
-        async_comprehension()]
+            [async_comprehension(),
+            async_comprehension(),
+            async_comprehension(),
+            async_comprehension()]
     )
     end = time.perf_counter()  # End time marker
 
