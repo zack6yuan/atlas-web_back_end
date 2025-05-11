@@ -3,7 +3,7 @@ from typing import Callable
 """
 Type-annotated function that takes a float
 Returns a function that multiplies a float by multiplier
-""" 
+"""
 
 
 def make_multiplier(multiplier: float) -> Callable[[float], float]:
