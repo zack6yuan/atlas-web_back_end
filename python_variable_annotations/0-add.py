@@ -9,6 +9,9 @@ def add(a: float, b: float) -> float:
     Parameters:
     a (float) --> First argument
     b (float) --> Second argument
+    
+    Method:
+    Return sum as a float by addition
 
     Returns:
     The sum of the two arguments as a float value

@@ -9,6 +9,11 @@ def sum_mixed_list(mxd_lst: List[Union[int, float]]) -> float:
     """
     Parameters:
     mxd_list (list(int + float)) --> list of integers and floats
+    
+    Methods:
+    To take in multiple types, use Union
+    Use the sum() function to retrieve the sum
+    of the mixed list (different types)
 
     Returns:
     The sum of the list as a float

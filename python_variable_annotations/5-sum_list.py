@@ -10,6 +10,10 @@ def sum_list(input_list: List[float]) -> float:
     """
     Parameters:
     input_list (list(floats)) --> list of floats
+    
+    Method:
+    Use the sum() function to retrieve
+    the sum of the input_list
 
     Returns:
     The sum of the list as floats

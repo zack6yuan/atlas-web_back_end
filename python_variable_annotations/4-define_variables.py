@@ -8,6 +8,9 @@ pi (float) --> value: 3.14
 i_understand_annotations (boolean) --> value: True
 school (string) --> value: "Holberton"
 
+Method:
+Annotate the variables and assign them values
+
 Returns:
 Values according to format
 """

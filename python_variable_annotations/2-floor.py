@@ -9,6 +9,10 @@ def floor(n: float) -> int:
     """
     Parameters:
     n (float) --> float value
+    
+    Method:
+    Use math.floor to retrieve the
+    floor of the float (n)
 
     Returns:
     The floor of the float

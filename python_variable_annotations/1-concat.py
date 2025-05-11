@@ -9,6 +9,10 @@ def concat(str1: str, str2: str) -> str:
     Parameters:
     str1 (string) --> the first string
     str2 (string) --> the second string
+    
+    Method:
+    Concatenate the two strings by adding
+    the two together
 
     Returns:
     The concatenation of the two strings
