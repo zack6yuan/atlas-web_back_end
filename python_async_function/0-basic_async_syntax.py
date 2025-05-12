@@ -10,7 +10,15 @@ async def wait_random(max_delay: int = 10) -> float:
     """
     Parameters:
     max_delay (int) -> Max delay of the process
-
+    
+    Methods:
+    Choose random value using random.uniform()
+    
+    random.uniform() --> chooses a random float value
+    
+    asyncio.sleep() --> pause the execution of the function
+    with the random value that is selected by random.uniform()
+    
     Returns:
     The random delay from the function as a float
     If called with no argument, 10 is the default value
