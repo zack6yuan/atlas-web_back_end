@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
+""" Basic Dictionary """
 class BasicCache(BaseCaching)
     def __init__(self):
         self.cache_data = {}
-        
+
     def put(self, key, item):
         """
         Arguments:
