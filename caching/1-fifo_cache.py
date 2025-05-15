@@ -7,7 +7,8 @@ class FIFOCache(BaseCaching):
     """
     FIFO Cache Class
     """
-    super().__init__()
+    def __init__(self):
+        super().__init__()
 
     def put(self, key, item):
         """
