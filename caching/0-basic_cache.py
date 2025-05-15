@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 """ Basic Dictionary """
-class BasicCache(BaseCaching)
+from base_caching import BaseCaching
+
+
+class BasicCache(BaseCaching):
     def __init__(self):
         self.cache_data = {}
 
