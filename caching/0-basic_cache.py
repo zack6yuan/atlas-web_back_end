@@ -20,6 +20,10 @@ class BasicCache(BaseCaching):
         """
         
         
+        if (key, item) == None:
+            return
+        
+        
     def get(self, key):
         """
         Arguments:
@@ -32,3 +36,7 @@ class BasicCache(BaseCaching):
         Returns:
         Value in self.cache_data linked to key
         """
+        
+        if (key == None or !(isinstance(key, self.cache_data)):
+            
+        
