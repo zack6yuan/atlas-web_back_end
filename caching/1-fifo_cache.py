@@ -4,9 +4,11 @@ from base_caching import BaseCaching
 
 
 class FIFOCache(BaseCaching):
-    def __init__(self):
-        self.cache_data = {}
-        
+    """
+    FIFO Cache Class
+    """
+    super().__init__()
+
     def put(self, key, item):
         """
         Arguments:
@@ -20,7 +22,8 @@ class FIFOCache(BaseCaching):
         if num(items) of self.cache_data > BaseCaching.MAX_ITEMS...
         Discard first item and print according to format
         """
-        
+        if key is None and item is None:
+            return
         
     def get(self, key):
         """
@@ -35,3 +38,7 @@ class FIFOCache(BaseCaching):
         Value in self.cache_data linked to key
         key || item (none) --> return None
         """
+        if key is None or key not in self.cache_data:
+            return None
+        else:
+            return self.cache_data[key]
