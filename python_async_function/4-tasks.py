@@ -19,4 +19,4 @@ def task_wait_n(max_delay: int) -> asyncio.Task:
     Returns:
     asyncio.Task (float) --> used to manage coroutines
     """
-    task_wait_random() 
+    task_wait_random()
