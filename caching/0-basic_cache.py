@@ -18,12 +18,12 @@ class BasicCache(BaseCaching):
         Assigns key item value to the dictionary
         key || item (none) --> nothing executed
         """
-        
-        
-        if (key, item) == None:
-            return
-        
-        
+        if item in self.cache_data:
+            self.cache_data.update(item)
+        if key or item is None:
+            pass
+
+
     def get(self, key):
         """
         Arguments:
@@ -36,7 +36,7 @@ class BasicCache(BaseCaching):
         Returns:
         Value in self.cache_data linked to key
         """
-        
-        if (key == None or !(isinstance(key, self.cache_data)):
-            
-        
+        for (key, value) in self.cache_data:
+            return value[key]
+        if (key is None) or  not isinstance (key, self.cache_data):
+            return None
