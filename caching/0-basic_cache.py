@@ -4,6 +4,15 @@ from base_caching import BaseCaching
 
 
 class BasicCache(BaseCaching):
+    """
+    Basic Cache Class 
+    
+    Methods:
+    __init__ --> initialize attributes of instance
+    put --> assigns key item value to dictionary
+    get --> get value of self.cache_data
+    """
+    
     def __init__(self):
         self.cache_data = {}
 
