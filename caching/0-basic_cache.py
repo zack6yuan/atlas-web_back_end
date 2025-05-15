@@ -8,13 +8,9 @@ class BasicCache(BaseCaching):
     Basic Cache Class 
     
     Methods:
-    __init__ --> initialize attributes of instance
     put --> assigns key item value to dictionary
     get --> get value of self.cache_data
     """
-    
-    def __init__(self):
-        self.cache_data = {}
 
     def put(self, key, item):
         """
@@ -27,9 +23,9 @@ class BasicCache(BaseCaching):
         Assigns key item value to the dictionary
         key || item (none) --> nothing executed
         """
-        if item in self.cache_data:
-            self.cache_data.update(item)
-        if key or item is None:
+        if item not in self.cache_data:
+            self.cache_data[key] = item
+        elif key is None and item is None:
             pass
 
 
@@ -45,7 +41,7 @@ class BasicCache(BaseCaching):
         Returns:
         Value in self.cache_data linked to key
         """
-        for (key, value) in self.cache_data:
-            return value[key]
-        if (key is None) or  not isinstance (key, self.cache_data):
+        for (key) in self.cache_data:
+            return self.cache_data[key]
+        if key is None or key not in self.cache_data:
             return None
