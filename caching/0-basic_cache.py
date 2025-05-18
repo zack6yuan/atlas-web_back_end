@@ -20,13 +20,14 @@ class BasicCache(BaseCaching):
         item --> key-value pair
         
         Methods:
+        Verifies that key and item are not none
         Assigns key item value to the dictionary
+        (If not in self.cache_data)
         key || item (none) --> nothing executed
         """
-        if key is None and item is None:
-            return
-        if item not in self.cache_data:
-            self.cache_data[key] = item
+        if key is not None and item is not None:
+            if item not in self.cache_data:
+                self.cache_data[key] = item
 
 
     def get(self, key):
