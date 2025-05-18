@@ -20,7 +20,12 @@ class LIFOCache(BaseCaching):
         if num(items) of self.cache_data > BaseCaching.MAX_ITEMS...
         Discard last item and print according to format
         """
-        
+        if key is not None and item is not None:
+            self.cache_data[key] = item
+        if len(self.cache_data) > BaseCaching.MAX_ITEMS:
+            self.cache_data.pop(-1)
+            print("DISCARD: {}\n".format(key))
+                    
         
     def get(self, key):
         """
@@ -35,3 +40,8 @@ class LIFOCache(BaseCaching):
         Value in self.cache_data linked to key
         key || item (none) --> return None
         """
+        if key is not None and item is not None and item in self.cache_data:
+            return self.cache_data[key]
+        
+        if key is None or key not in self.cache_data:
+            return None
