@@ -5,8 +5,8 @@ from base_caching import BaseCaching
 
 class BasicCache(BaseCaching):
     """
-    Basic Cache Class 
-    
+    Basic Cache Class
+
     Methods:
     put --> assigns key item value to dictionary
     get --> get value of self.cache_data
@@ -18,7 +18,7 @@ class BasicCache(BaseCaching):
         self --> instance of the class
         key --> unique identifier
         item --> key-value pair
-        
+
         Methods:
         Verifies that key and item are not none
         Assigns key item value to the dictionary
@@ -29,16 +29,15 @@ class BasicCache(BaseCaching):
             if item not in self.cache_data:
                 self.cache_data[key] = item
 
-
     def get(self, key):
         """
         Arguments:
         self --> instance of the class
         key --> uniqie identifier
-        
+
         Methods:
         key || item (none) --> nothing executed
-        
+
         Returns:
         Value in self.cache_data linked to key
         """
