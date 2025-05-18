@@ -4,7 +4,11 @@ from base_caching import BaseCaching
 
 
 class MRUCache(BaseCaching):
+    """
+    MRU Cache Class
+    """
     def __init__(self):
+        super().__init__()
         self.cache_data = {}
         
     def put(self, key, item):
@@ -20,6 +24,13 @@ class MRUCache(BaseCaching):
         if num(items) of self.cache_data > BaseCaching.MAX_ITEMS...
         Discard MRU item and print according to format
         """
+        if key is not None and item is not None and item in self.cache_data:
+            return self.cache_data[key]
+        if key is None or item is None:
+            return
+        if len(self.cache_data) > BaseCaching.MAX_ITEMS:
+            self.cache_data.pop(1)
+            print("DISCARD: {}\n".format(key))
         
         
     def get(self, key):
@@ -35,3 +46,7 @@ class MRUCache(BaseCaching):
         Value in self.cache_data linked to key
         key || item (none) --> return None
         """
+        if key is not None and key in self.cache_data:
+            return self.cache_data[key]
+        if key is None or key not in self.cache_data:
+            return None
