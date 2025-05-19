@@ -8,6 +8,8 @@ import typing
 
 from user import Base
 
+User = __import__('user').User
+
 
 class DB:
     """ DB class """
