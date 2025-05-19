@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+import re
+
+
 def filter_datum(fields: str, redaction: str, message: str, separator: str):
     """
     Arguments:
@@ -7,3 +10,4 @@ def filter_datum(fields: str, redaction: str, message: str, separator: str):
     message (str) --> log time
     separator(str) --> character separating all log time fields
     """
+    re.sub(r"password", "xxx", message)
