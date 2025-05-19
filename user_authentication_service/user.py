@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+"""
+Method: Create an SQLAlchey model for a database table
+"""
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 
@@ -7,7 +10,6 @@ Base = declarative_base()
 class User(Base):
     """
     User Class that inherits from Base
-    Creates an SQLAlchey model for a database table
     Uses the Mapping Declaration of SQLAlchemy
     """
     __tablename__ = 'users'
