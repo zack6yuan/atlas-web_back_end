@@ -7,8 +7,6 @@ class FIFOCache(BaseCaching):
     """
     FIFO Cache Class
     """
-    def __init__(self):
-        x
 
     def put(self, key, item):
         """
@@ -28,7 +26,7 @@ class FIFOCache(BaseCaching):
                 self.cache_data[key] = item
         if len(self.cache_data) > BaseCaching.MAX_ITEMS:
             self.cache_data.pop(0)
-            print("DISCARD: {}").format(key)
+            print ("DISCARD: {}").format(key)
         
     def get(self, key):
         """
