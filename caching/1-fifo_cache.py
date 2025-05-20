@@ -7,7 +7,9 @@ class FIFOCache(BaseCaching):
     """
     FIFO Cache Class
     """
-
+    def __init__(self):
+        super().__init__()
+            
     def put(self, key, item):
         """
         Arguments:
@@ -19,15 +21,19 @@ class FIFOCache(BaseCaching):
         Assigns key item value to the dictionary
         key || item (none) --> nothing executed
         if num(items) of self.cache_data > BaseCaching.MAX_ITEMS...
+        next(iter()) --> returns the first item in the dictionary
         Discard first item and print according to format
         """
-        if key is not None and item is not None:
-            if item not in self.cache_data:
-                self.cache_data[key] = item
+        if key is None or item is None:
+            return
+        if item not in self.cache_data:
+            self.cache_data[key] = item
         if len(self.cache_data) > BaseCaching.MAX_ITEMS:
-            self.cache_data.pop(0)
-            print ("DISCARD: {}").format(key)
-        
+            first_item = next(iter(self.cache_data))
+            self.cache_data.pop(first_item)
+            print("DISCARD: {}".format(first_item))
+ 
+
     def get(self, key):
         """
         Arguments:
@@ -43,5 +49,4 @@ class FIFOCache(BaseCaching):
         """
         if key is None or key not in self.cache_data:
             return None
-        else:
-            return self.cache_data[key]
+        return self.cache_data[key]
