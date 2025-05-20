@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 import re
+from typing import List
 
 
-def filter_datum(fields: str, redaction: str, message: str, separator: str):
+def filter_datum(fields: List[str], redaction: str, message: str, separator: str):
     """
     Arguments:
     fields (list(str)) --> all fields to obfuscate
@@ -10,4 +11,5 @@ def filter_datum(fields: str, redaction: str, message: str, separator: str):
     message (str) --> log time
     separator(str) --> character separating all log time fields
     """
-    re.sub(r"password", "xxx", message)
+    new_password = re.sub("eggcellent", "xxx", message)
+    print(new_password)
