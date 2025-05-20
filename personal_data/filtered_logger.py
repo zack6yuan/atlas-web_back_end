@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 import re
-from typing import List
+from typing import List, String
 
 
-def filter_datum(fields: List[str], redaction: str, message: str, separator: str):
+def filter_datum(fields: List[str], redaction: str, message: str, separator: str) -> str:
     """
     Arguments:
     fields (list(str)) --> all fields to obfuscate
