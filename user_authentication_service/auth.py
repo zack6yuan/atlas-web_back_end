@@ -31,7 +31,7 @@ class Auth:
         self._db = DB()
         
     def register_user(email: str, password: str) -> User:
-        if (email)
+        if (email):
             raise new ValueError("User {} already exists.".format(email))
         else:
             _hash_password(password, salt)
