@@ -34,3 +34,11 @@ class Auth:
             raise new ValueError("User {} already exists.".format(email))
         else:
             _hash_password(password, salt)
+            
+    def valid_login(email, password) -> bool:
+         if (email):
+             converted_pwd = password.encode('utf-8')
+             check = bcrypt.checkpw(converted_pwd)
+             """
+             Implement the rest of the logic here
+             """
