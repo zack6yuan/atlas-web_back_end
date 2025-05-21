@@ -32,7 +32,7 @@ class Auth:
         
     def register_user(email: str, password: str) -> User:
         if (email):
-            raise new ValueError("User {} already exists.".format(email))
+            raise ValueError("User {} already exists.".format(email))
         else:
             _hash_password(password, salt)
             
