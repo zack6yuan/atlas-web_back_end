@@ -9,14 +9,14 @@ class LIFOCache(BaseCaching):
     """
     def __init__(self):
         super().__init__()
-        
+
     def put(self, key, item):
         """
         Arguments:
         self --> instance of the class
         key --> unique identifier
         item --> key- value pair
-        
+
         Methods:
         Assigns key item value to the dictionary
         key || item (none) --> nothing executed
@@ -25,20 +25,20 @@ class LIFOCache(BaseCaching):
         """
         if not key or not item:
             return
-        
+
         removed_item = 0
-        
+
         if key in self.cache_data:
             self.cache_data.pop(key)
             self.cache_data[key] = item
-            
+
         if len(self.cache_data) >= BaseCaching.MAX_ITEMS:
             removed_item, _ = self.cache_data.popitem()
             print("DISCARD: {}".format(removed_item))
-            
+  
         self.cache_data[key] = item
 
-    
+
     def get(self, key):
         """
         Arguments:
