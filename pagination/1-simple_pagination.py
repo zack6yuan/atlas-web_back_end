@@ -49,25 +49,25 @@ class Server:
         Arguemnts:
         page --> the current page
         page_size --> the size of the page
-        
+
         Methods:
         Verify integer types and values
         self.dataset() --> access the full dataset / read csv file
         Call the index_range function with page and page size
         Check if arguments are in range for the dataset
-        
+
         Returns:
         The dataset
         """
         assert isinstance(page, int) and (page > 0)
         assert isinstance(page_size, int) and (page_size > 0)
-        
+
         page_data = self.dataset()
-        
+
         start, end = index_range(page, page_size)
-        
+
         if (start > len(page_data)):
             return []
-        
+
         final_data = [page_data[0], page_data[1], page_data[3], page_data[4]]
         return final_data
