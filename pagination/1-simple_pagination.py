@@ -69,4 +69,5 @@ class Server:
         if (start > len(page_data)):
             return []
         
-        return page_data
+        final_data = [page_data[0], page_data[1], page_data[3], page_data[4]]
+        return final_data
