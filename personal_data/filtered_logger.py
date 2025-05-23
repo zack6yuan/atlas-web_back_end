@@ -11,4 +11,4 @@ def filter_datum(fields: List[str], redaction: str, message: str, separator: str
     message (str) --> log time
     separator(str) --> character separating all log time fields
     """
-    
+   #  re.sub(pattern, replacement, string, count=0, flags=0) # format
