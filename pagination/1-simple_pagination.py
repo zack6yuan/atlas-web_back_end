@@ -45,5 +45,25 @@ class Server:
         return self.__dataset
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
+        """
+        Arguemnts:
+        page --> the current page
+        page_size --> the size of the page
+        
+        Methods:
+        Verify integer types and values
+        self.dataset() --> access the full dataset / read csv file
+        Call the index_range function
+        Check if input a
+        """
         assert isinstance(page, int) and (page > 0)
         assert isinstance(page_size, int) and (page_size > 0)
+        
+        page_data = self.dataset()
+        
+        start, end = index_range(page, page_size)
+        
+        if (start > page_size):
+            return []
+        
+        return page_data
