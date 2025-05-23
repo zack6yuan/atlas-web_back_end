@@ -26,4 +26,6 @@ def stats() -> str:
     return jsonify(stats)
 
 @app_views.route('/unauthorized', strict_slashes=False)
+def handle_abort():
+    """ Method: abort 401 """
     abort(401)
