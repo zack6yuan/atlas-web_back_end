@@ -31,7 +31,8 @@ def handle_abort():
     """ Method: abort 401 """
     abort(401)
 
+
 @app_views.route('/forbidden', strict_slashes=False)
 def handle_forbidden():
     """ Method: abort 403 """
-    abort (403)
+    abort(403)
