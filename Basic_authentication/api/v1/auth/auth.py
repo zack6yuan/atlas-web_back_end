@@ -20,6 +20,8 @@ class Auth:
             return True
         if path in excluded_paths:
             return False
+        if path == '/':
+            return '/'
         else:
             return True
 
