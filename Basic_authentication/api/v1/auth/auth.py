@@ -5,9 +5,9 @@ from typing import List, TypeVar
 
 
 """ Defined Class Auth """
+
+
 class Auth:
-    
-    
     """ Initialize Class Auth """
     def __init__(self):
         pass
