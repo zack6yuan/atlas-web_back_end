@@ -5,6 +5,7 @@ from flask import request
 """ Auth Module """
 class Auth:
     def __init__(self):
+        pass
         
     def require_auth(self, path:str, excluded_paths: List[str]) -> bool:
         return (False - "{}".format(path), excluded_paths)
