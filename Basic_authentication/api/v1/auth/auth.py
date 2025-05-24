@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
+""" Auth Module """
 from flask import request
 from typing import List, TypeVar
 
 
-""" Auth Module """
+""" Defined Class Auth """
 class Auth:
-    """ Defined class Auth """
+    """ Initialize Class Auth """
     def __init__(self):
         pass
      
