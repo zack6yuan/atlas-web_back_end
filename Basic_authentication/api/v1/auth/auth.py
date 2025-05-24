@@ -22,6 +22,8 @@ class Auth:
             return False
         if path == '/':
             return '/'
+        if path.endswith('/'):
+            return path.rstrip("/") #rstrip -> right strip (remove trailing slash)
         else:
             return True
 
