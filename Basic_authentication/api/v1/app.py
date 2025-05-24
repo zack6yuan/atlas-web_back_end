@@ -35,6 +35,7 @@ def unauthorized_resources(error) -> str:
 
 @app.before_request
 def filter_request():
+    """ Filter request function """
     if auth is None:
         return
     path_list = {
