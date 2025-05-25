@@ -4,20 +4,14 @@ from api.v1.auth.auth import Auth
 
 
 class BasicAuth(Auth):
-    """
-    BasicAuth Class
-    """
-    def __init__(self):
-        """ Constructor for the class BasicAuth """
-        pass
-    
+    """ BasicAuth Class """
     def extract_base64_authorization_header(self, authorization_header: str) -> str:
         """ Extract Base 64 Authorization Header Function """
         if authorization_header is None:
             return None
-        elif not isinstance(authorization_header, str):
+        if not isinstance(authorization_header, str):
             return None
-        elif authorization_header.startswith("Basic "):
+        if not authorization_header.startswith("Basic "):
             return None
-        else:
-            return authorization_header
+        
+        return authorization_header
