@@ -15,7 +15,7 @@ class BasicAuth(Auth):
         """ Extract Base 64 Authorization Header Function """
         if authorization_header is None:
             return None
-        elif not instanceof(authorization_header, str):
+        elif not isinstance(authorization_header, str):
             return None
         elif authorization_header.startswith("Basic "):
             return None
