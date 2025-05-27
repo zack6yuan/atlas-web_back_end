@@ -19,14 +19,17 @@ def main():
 
 @app.route('/users', methods=['POST'], strict_slashes=False)
 def users(email, password):
-    payload = {
-        "email": "{}".format(email),
-        "message": "user created"
-    }
-    if not email or not password:
+    try:
+        payload = {
+            "email": email,
+            "message", "user created"
+        }
         return jsonify(payload)
-    
-    
+    except Exception as e:
+        error_message = {
+            "message": "email already registered"
+        }
+        return jsonify(error_message), 400
     
 
 
