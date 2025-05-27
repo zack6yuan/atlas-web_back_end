@@ -7,7 +7,7 @@ from auth import Auth
 app = Flask(__name__)
 
 
-AUTH = auth()
+AUTH = Auth()
 
 
 @app.route('/', methods=['GET'], strict_slashes=False)
@@ -24,7 +24,7 @@ def users(email, password):
         "message": "user created"
     }
     if not email or not password:
-        return jsonify()
+        return jsonify(payload)
     
     
     
