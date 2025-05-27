@@ -27,7 +27,7 @@ def get_db() -> mysql.connector.connection.MySQLConnection:
     --> password
     --> host
     --> database
-    
+
     Returns:
     An SQL Connector
     """
