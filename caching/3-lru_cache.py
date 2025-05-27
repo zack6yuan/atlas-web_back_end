@@ -33,10 +33,8 @@ class LRUCache(BaseCaching):
             self.cache_data[key] = item
 
         if len(self.cache_data) >= BaseCaching.MAX_ITEMS:
-            removed_item, _ = self.cache_data.popitem()
+            removed_item, _ = self.cache_data.popitem(last=False)
             print("DISCARD: {}".format(removed_item))
-
-        self.cache_data[key] = item
 
     def get(self, key):
         """
