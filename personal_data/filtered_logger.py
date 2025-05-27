@@ -5,18 +5,18 @@ from typing import List
 import os
 import mysql.connector
 
-"""
-def filter_datum(fields: List[str], redaction:
-str, message: str, separator: str) -> str:
+
+def filter_datum(fields: List[str], redaction: str, message: str, separator: str) -> str:
+    """
     Arguments:
     fields (list(str)) --> all fields to obfuscate
     redaction (str) --> what the fiield will be obfuscated by
     message (str) --> log time
     separator(str) --> character separating all log time fields
+    """
 
-    pattern = re.('[eggcellent]', message)
+    pattern = re.sub('[eggcellent]', message)
     print(pattern)
-"""
 
 
 def get_db() -> mysql.connector.connection.MySQLConnection:
@@ -43,3 +43,15 @@ def get_db() -> mysql.connector.connection.MySQLConnection:
         host=host,
         database=database
     )
+    
+def main():
+    """
+    Main Function
+    Args:
+        None
+    Methods:
+        Obtains a database connection and retrieves it
+    Returns:
+        None
+    """
+    
