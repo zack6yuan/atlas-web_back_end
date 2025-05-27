@@ -5,16 +5,18 @@ import os
 import mysql.connector
 
 """
-def filter_datum(fields: List[str], redaction: str, message: str, separator: str) -> str:
+def filter_datum(fields: List[str], redaction:
+str, message: str, separator: str) -> str:
     Arguments:
     fields (list(str)) --> all fields to obfuscate
     redaction (str) --> what the fiield will be obfuscated by
     message (str) --> log time
     separator(str) --> character separating all log time fields
-    
+
     pattern = re.('[eggcellent]', message)
     print(pattern)
 """
+
 
 def get_db() -> mysql.connector.connection.MySQLConnection:
     """ Connects to holberton databse and returns a connector """
@@ -22,9 +24,10 @@ def get_db() -> mysql.connector.connection.MySQLConnection:
     password = os.getenv("PERSONAL_DATA_DB_PASSWORD")
     host = os.getenv("PERSONAL_DATA_DB_HOST")
     database = os.getenv("PERSONAL_DATA_DB_NAME")
-    
-    return mysql.connector.connect(username=username,
-                                                            password=password,
-                                                            host=host,
-                                                            database=database
-                                                            )
+
+    return mysql.connector.connect(
+        username=username,
+        password=password,
+        host=host,
+        database=database
+    )
