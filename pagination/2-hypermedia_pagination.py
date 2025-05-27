@@ -82,7 +82,8 @@ class Server:
         
         page_data = self.get_page(page, page_size)
         
-        total_pages = len(page_data)
+        datalen = len(self.dataset())
+        total_pages = (datalen / page_size)
         
         dictionary = {
             "page_size": page_size,
