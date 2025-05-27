@@ -22,9 +22,9 @@ def users(email, password):
     try:
         payload = {
             "email": email,
-            "message", "user created"
+            "message": "user created"
         }
-        return jsonify(payload)
+        return jsonify(payload), 200
     except Exception as e:
         error_message = {
             "message": "email already registered"
