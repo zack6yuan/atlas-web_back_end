@@ -7,8 +7,7 @@ from sqlalchemy.orm.session import Session
 import typing
 
 from user import Base
-
-User = __import__('user').User
+from  user import User
 
 
 class DB:
@@ -43,7 +42,7 @@ class DB:
         The new User object
         """
         new_user = User(email=email, hashed_password=hashed_password)
-        session.add(new_user)
-        session.commit()
-        session.refresh(new_user)
+        self._session.add(new_user)
+        self._session.commit()
+        self._session.refresh(new_user)
         return new_user
