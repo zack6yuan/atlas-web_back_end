@@ -19,7 +19,18 @@ str, message: str, separator: str) -> str:
 
 
 def get_db() -> mysql.connector.connection.MySQLConnection:
-    """ Connects to holberton databse and returns a connector """
+    """
+    Connects to holberton databse and returns a connector
+    Methods:
+    Get environment variables:
+    --> username
+    --> password
+    --> host
+    --> database
+    
+    Returns:
+    An SQL Connector
+    """
     username = os.getenv("PERSONAL_DATA_DB_USERNAME")
     password = os.getenv("PERSONAL_DATA_DB_PASSWORD")
     host = os.getenv("PERSONAL_DATA_DB_HOST")
