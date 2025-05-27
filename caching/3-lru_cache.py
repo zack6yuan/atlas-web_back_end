@@ -26,14 +26,17 @@ class LRUCache(BaseCaching):
         if not key or not item:
             return
 
+        removed_item = 0
+
         if key in self.cache_data:
             self.cache_data.pop(key)
-        
-        self.cache_data[key] = item
+            self.cache_data[key] = item
 
-        if len(self.cache_data) > BaseCaching.MAX_ITEMS:
+        if len(self.cache_data) >= BaseCaching.MAX_ITEMS:
             removed_item, _ = self.cache_data.popitem()
             print("DISCARD: {}".format(removed_item))
+
+        self.cache_data[key] = item
 
     def get(self, key):
         """
