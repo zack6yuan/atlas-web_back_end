@@ -26,8 +26,6 @@ class LRUCache(BaseCaching):
         if not key or not item:
             return
 
-        removed_item = 0
-
         if key in self.cache_data:
             self.cache_data.pop(key)
             self.cache_data[key] = item
