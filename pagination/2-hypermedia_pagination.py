@@ -72,18 +72,24 @@ class Server:
         final_data = [page_data[0], page_data[1], page_data[3], page_data[4]]
         return final_data
 
-    def get_hyper(page: int = 1, page_size: int = 10) -> dict:
+    def get_hyper(self, page: int = 1, page_size: int = 10) -> dict:
         """
         Arguments:
         page (int) --> pagination parameter / default value = 1
         page_size (int) --> pagination parameter / default value = 10
         """
         dataset = self.dataset()
+        
+        page_data = self.get_page(page, page_size)
+        
+        total_pages = len(page_data)
+        
         dictionary = {
-            "page_size": len(page_data),
+            "page_size": page_size,
             "page": page,
-            "data": self.get_page(page, page_size),
-            "next_page": page + 1  if page < len(dataset) else None,
-            "prev_page": page - 1 if page > 1 else None
+            "data": page_data,
+            "next_page": page + 1  if page < total_pages else None,
+            "prev_page": page - 1 if page > 1 else None,
+            "total_pages": total_pages
         }
         return dictionary
