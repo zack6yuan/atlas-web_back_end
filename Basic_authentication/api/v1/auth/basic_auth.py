@@ -7,15 +7,28 @@ from typing import TypeVar
 class BasicAuth(Auth):
     """ BasicAuth Class """
     def extract_base64_authorization_header(self, authorization_header: str) -> str:
-        """ Extract Base 64 Authorization Header Function """
+        """
+        Extract Base 64 Authorization Header Function
+        
+        Methods:
+        if authorization_header is None, not a string, or does not
+        start with "Basic", return None
+        Use string slicing to get the substring (After "Basic"
+        and the space)
+        
+        Returns:
+        The value after Basic, and the space
+        """
         if authorization_header is None:
             return None
         if not isinstance(authorization_header, str):
             return None
         if not authorization_header.startswith("Basic "):
             return None
+        decoded = authorization_header[len("Basic "):]
         
-        return authorization_header
+        return decoded
+        
     
     def decode_base64_authorization_header(self, base64_authorization_header: str) -> str:
         """ Decode Base 64 Authorization Header Function """
