@@ -7,6 +7,9 @@ import mysql.connector
 import logging
 
 
+PII_FIELDS = ('name', 'email', 'phone', 'ssn', 'password')
+
+
 def filter_datum(fields: List[str], redaction: str, message: str, separator: str) -> str:
     """
     Arguments:
@@ -67,4 +70,15 @@ class RedactingFormatter(logging.Formatter):
 
     def format(self, record: logging.LogRecord) -> str:
         NotImplementedError
-
+        
+    def get_logger() -> logging.Logger:
+        logger = logging.getLogger("user_data")
+        logger.setLevel(logging.INFO)
+        logger.propagate = False
+        stream_handler = logger.StreamHandler()
+        RedactingFormatter = logger.Formatter()
+        
+        return logger
+        
+        
+        
