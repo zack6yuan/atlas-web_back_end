@@ -52,6 +52,8 @@ def filter_request():
         abort(401)
     if auth.current_user(request) is None:
         abort(403)
+        
+    auth.current_user(request) = user
 
 
 if __name__ == "__main__":
