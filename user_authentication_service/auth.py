@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-""" Hash Password """
+""" Auth Module """
 import bcrypt
 from db import DB
 import uuid
 from user import User
+from sqlalchemy.orm.exc import NoResultFound
 
 
 def _hash_password(password: str) -> bytes:
@@ -32,10 +33,9 @@ class Auth:
         self._db = DB()
         
     def register_user(email: str, password: str) -> User:
-        if (email):
-            raise ValueError("User {} already exists.".format(email))
-        else:
-            _hash_password(password, salt)
+        if email and password:
+            try:
+                self._db.find_user
             
     def valid_login(email, password) -> bool:
          if (email):
