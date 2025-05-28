@@ -7,7 +7,9 @@ from typing import TypeVar
 class BasicAuth(Auth):
     """ BasicAuth Class """
     def extract_base64_authorization_header(
-        self, authorization_header: str) -> str:
+        self,
+        authorization_header: str
+    ) -> str:
         """
         Extract Base 64 Authorization Header Function
 
@@ -31,7 +33,9 @@ class BasicAuth(Auth):
         return decoded
 
     def decode_base64_authorization_header(
-        self, base64_authorization_header: str) -> str:
+        self,
+        base64_authorization_header: str
+    ) -> str:
         """ Decode Base 64 Authorization Header Function """
         if base64_authorization_header is None:
             return None
@@ -39,7 +43,9 @@ class BasicAuth(Auth):
             return None
 
     def extract_user_credentials(
-        self, decoded_base64_authorization_header: str) -> (str, str):
+        self,
+        decoded_base64_authorization_header: str
+    ) -> (str, str):
         """ Extract User Credentials Function """
         if decoded_base64_authorization_header is None:
             return None, None
@@ -51,7 +57,10 @@ class BasicAuth(Auth):
         return ("{}:{}".format(str, str))
 
     def user_object_from_credentials(
-        self, user_email: str, user_pwd: str) -> TypeVar('User'):
+        self,
+        user_email: str,
+        user_pwd: str
+    ) -> TypeVar('User'):
         """ User Object From Credentials Function """
         if user_email is None or not isinstance(user_email, str):
             return None
