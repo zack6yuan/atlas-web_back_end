@@ -25,7 +25,7 @@ def filter_datum(fields: List[str], redaction: str, message: str, separator: str
     """
     pattern = r'(password|date_of_birth)=([^;]+)'
     filtered = re.sub(pattern, r'\1=' + redaction, message)
-    print(filtered)
+    return (filtered)
 
 
 def get_db() -> mysql.connector.connection.MySQLConnection:
