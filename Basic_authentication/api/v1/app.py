@@ -46,7 +46,7 @@ def filter_request():
     if auth is None:
         return
     path_list = ['/api/v1/status/', '/api/v1/unauthorized/', '/api/v1/forbidden/']
-    if not auth.require_auth(request.path, path_list):
+    if auth.require_auth(request.path, path_list) is False:
         return
     if auth.authorization_header(request) is None:
         abort(401)
