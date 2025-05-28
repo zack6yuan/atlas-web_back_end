@@ -56,6 +56,16 @@ def get_db() -> mysql.connector.connection.MySQLConnection:
         host=host,
         database=database
     )
+    
+def get_logger() -> logging.Logger:
+        logger = logging.getLogger("user_data")
+        logger.setLevel(logging.INFO)
+        logger.propagate = False
+        stream_handler = logging.StreamHandler()
+        stream_handler.setFormatter(PII_FIELDS)
+        logger.addHandler(stream_handler)
+        
+        return logger
 
 class RedactingFormatter(logging.Formatter):
     """ Redacting Formatter class
@@ -70,15 +80,3 @@ class RedactingFormatter(logging.Formatter):
 
     def format(self, record: logging.LogRecord) -> str:
         NotImplementedError
-        
-    def get_logger() -> logging.Logger:
-        logger = logging.getLogger("user_data")
-        logger.setLevel(logging.INFO)
-        logger.propagate = False
-        stream_handler = logger.StreamHandler()
-        RedactingFormatter = logger.Formatter()
-        
-        return logger
-        
-        
-        
