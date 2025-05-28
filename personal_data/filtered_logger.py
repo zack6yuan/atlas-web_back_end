@@ -58,6 +58,18 @@ def get_db() -> mysql.connector.connection.MySQLConnection:
     )
     
 def get_logger() -> logging.Logger:
+    """
+    Get Logger Function
+    Methods:
+        Set the logger name to user_data
+        Log up to logging.INFO
+        Should not propagate
+        Add StreamHandler with
+        RedactingFormatter as formatter
+    Returns:
+        The class of the object and number
+        of PII_FIELDS
+    """
         logger = logging.getLogger("user_data")
         logger.setLevel(logging.INFO)
         logger.propagate = False
