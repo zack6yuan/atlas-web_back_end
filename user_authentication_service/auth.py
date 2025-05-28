@@ -25,19 +25,7 @@ def _hash_password(password: str) -> bytes:
     hashed = bcrypt.hashpw(hashed_pwd, salt)
     return hashed
 
-class Auth:
-    """Auth class to interact with the authentication database.
-    """
-
-    def __init__(self):
-        self._db = DB()
-        
-    def register_user(email: str, password: str) -> User:
-        if email and password:
-            try:
-                self._db.find_user
-             
-    def _generate_uuid() -> str:
+def _generate_uuid() -> str:
         """
         Generate UUIds
         
@@ -46,3 +34,15 @@ class Auth:
         """
         new_identifier = uuid.uuid4()
         return str(new_identifier)
+
+class Auth:
+    """Auth class to interact with the authentication database.
+    """
+    def __init__(self):
+        self._db = DB()
+        
+    def register_user(email: str, password: str) -> User:
+        if email and password:
+            try:
+                self._db.find_user
+             
