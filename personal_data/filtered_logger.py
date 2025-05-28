@@ -70,6 +70,3 @@ class RedactingFormatter(logging.Formatter):
 
     def format(self, record: logging.LogRecord) -> str:
         NotImplementedError
-        
-    def get_logger() -> logging.Logger:
-        
