@@ -31,6 +31,8 @@ def users():
         }
         return jsonify(error_message), 400
     
+def update_password()
+    
 
 
 if __name__ == "__main__":
