@@ -18,7 +18,7 @@ class SessionAuth(Auth):
         self.user_id_by_session_id[session] = user_id
 
         return session
-    
+
     def user_id_for_session_id(self, session_id: str = None) -> str:
         """ User Id For Session ID Function """
         if session_id is None:
@@ -26,6 +26,5 @@ class SessionAuth(Auth):
         if not isinstance(session_id, str):
             return None
         value = self.user_id_by_session_id.get(session_id)
-        
+
         return value
-        
