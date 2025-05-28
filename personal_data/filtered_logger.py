@@ -70,14 +70,14 @@ def get_logger() -> logging.Logger:
         The class of the object and number
         of PII_FIELDS
     """
-        logger = logging.getLogger("user_data")
-        logger.setLevel(logging.INFO)
-        logger.propagate = False
-        stream_handler = logging.StreamHandler()
-        stream_handler.setFormatter(PII_FIELDS)
-        logger.addHandler(stream_handler)
+    logger = logging.getLogger("user_data")
+    logger.setLevel(logging.INFO)
+    logger.propagate = False
+    stream_handler = logging.StreamHandler()
+    stream_handler.setFormatter(PII_FIELDS)
+    logger.addHandler(stream_handler)
         
-        return logger
+    return logger
 
 class RedactingFormatter(logging.Formatter):
     """ Redacting Formatter class
