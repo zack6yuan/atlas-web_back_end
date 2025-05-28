@@ -45,8 +45,8 @@ def unauthorized_resources(error) -> str:
     return jsonify({"error": "Forbidden"}), 403
 
 @app.before_request
-def before_request():
-    """ Before request function """
+def filter_request():
+    """ Filter request function """
     if auth is None:
         return
     path_list = ['/api/v1/status/', '/api/v1/unauthorized/', '/api/v1/forbidden/', '/api/v1/auth_session/login/']
