@@ -20,7 +20,7 @@ class Auth:
             return True
         if path in excluded_paths:
             return False
-        if path[-1] != "/": # if no trailing slash
+        if path[-1] != "/":  # if no trailing slash
             path = path + "/"
         else:
             return True
@@ -33,7 +33,6 @@ class Auth:
             return None
         else:
             return request.headers.get('Authorization')
-        
 
     def current_user(self, request=None) -> TypeVar('User'):
         """ Current user method """
