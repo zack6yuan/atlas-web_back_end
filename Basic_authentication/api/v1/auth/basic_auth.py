@@ -66,3 +66,11 @@ class BasicAuth(Auth):
             return None
         if user_pwd is None or not isinstance(user_pwd, str):
             return None
+        
+    def current_user(self, request=None) -> TypeVar('User'):
+        """ Retrieves the User Instance for a request """
+        auth_header = self.authorization_header(request)
+        extract_base = self.extract_base64_authorization_header(auth_header)
+        decode_base = self.decode_base64_authorization_header(extract_base)
+        extract_user = self.extract_user_credentials(decode_base)
+        user_object = self.user_object_from_credentials(user_email, user_pwd)
