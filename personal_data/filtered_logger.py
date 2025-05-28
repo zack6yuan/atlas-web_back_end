@@ -15,8 +15,9 @@ def filter_datum(fields: List[str], redaction: str, message: str, separator: str
     separator(str) --> character separating all log time fields
     """
 
-    pattern = re.sub('[eggcellent]', message)
-    print(pattern)
+    pattern = r'(password|date_of_birth)=([^,;\s]+)'
+    filtered = re.sub(pattern, redaction, message)
+    print(filtered)
 
 
 def get_db() -> mysql.connector.connection.MySQLConnection:
