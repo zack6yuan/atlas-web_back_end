@@ -35,3 +35,27 @@ class SessionAuth(Auth):
         """ Destroy Session Function """
         if request is None:
             return False
+        
+    def current_user(self, request=None) -> User:
+        """
+        Current User Function
+        
+        Methods:
+        Check is request is None
+        Get cookie_value, and ensure it is not None
+        Get user_id, and ensure it is not None
+        Get the user instance
+        
+        Returns:
+        The User ID based on the cookie
+        """
+        if request is None:
+            return None
+        cookie_value = self.session_cookie(request)
+        if cookie_value is None:
+            return None
+        user_id = self.user_id_for_session_id(cookie_value)
+        if user_id is None:
+            return None
+        
+        return User.get(user_id)
