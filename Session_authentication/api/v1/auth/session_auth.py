@@ -2,7 +2,6 @@
 """ Session Auth Module """
 from api.v1.auth.auth import Auth
 from api.v1.views.users import User
-from api.v1.auth.auth import session_cookie
 import uuid
 
 
