@@ -59,8 +59,10 @@ class Server:
         Returns:
         The dataset
         """
-        assert isinstance(page, int) and (page > 0)
-        assert isinstance(page_size, int) and (page_size > 0)
+        assert isinstance(page, int)
+        assert (page > 0)
+        assert isinstance(page_size, int)
+        assert (page_size > 0)
 
         page_data = self.dataset()
 
@@ -83,7 +85,7 @@ class Server:
         page_data = self.get_page(page, page_size)
         
         datalen = len(self.dataset())
-        total_pages = (datalen / page_size)
+        total_pages = math.ceil(datalen / page_size)
         
         dictionary = {
             "page_size": page_size,
