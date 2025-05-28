@@ -24,7 +24,7 @@ def filter_datum(fields: List[str], redaction: str, message: str, separator: str
     Returns:
     The result of the regex
     """
-    REDACTION = "***"
+    REDACTION = "xxx"
     pattern = r'(password|date_of_birth)=([^;]+)'
     filtered = re.sub(pattern, r'\1=' + REDACTION, message)
     print(filtered)
