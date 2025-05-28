@@ -36,14 +36,6 @@ class Auth:
         if email and password:
             try:
                 self._db.find_user
-            
-    def valid_login(email, password) -> bool:
-         if (email):
-             converted_pwd = password.encode('utf-8')
-             check = bcrypt.checkpw(converted_pwd)
-             """
-             Implement the rest of the logic here
-             """
              
     def _generate_uuid() -> str:
         """
