@@ -81,17 +81,17 @@ class Server:
         page_size (int) --> pagination parameter / default value = 10
         """
         dataset = self.dataset()
-        
+
         page_data = self.get_page(page, page_size)
-        
+
         datalen = len(self.dataset())
         total_pages = math.ceil(datalen / page_size)
-        
+
         dictionary = {
             "page_size": page_size,
             "page": page,
             "data": page_data,
-            "next_page": page + 1  if page < total_pages else None,
+            "next_page": page + 1 if page < total_pages else None,
             "prev_page": page - 1 if page > 1 else None,
             "total_pages": total_pages
         }
