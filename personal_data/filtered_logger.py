@@ -14,10 +14,19 @@ def filter_datum(fields: List[str], redaction: str, message: str, separator: str
     redaction (str) --> what the fiield will be obfuscated by
     message (str) --> log time
     separator(str) --> character separating all log time fields
+    
+    Methods:
+    Regex Expression:
+    (password | date_of_birth) --> matches either
+    [^;]+ --> match characters (one or more) except a semicolon
+    r'\1=' --> ensures the = sign is kept during re.sub with REDACTION
+    
+    Returns:
+    The result of the regex
     """
-
-    pattern = r'(password|date_of_birth)=([^,;\s]+)'
-    filtered = re.sub(pattern, redaction, message)
+    REDACTION = "***"
+    pattern = r'(password|date_of_birth)=([^;]+)'
+    filtered = re.sub(pattern, r'\1=' + REDACTION, message)
     print(filtered)
 
 
