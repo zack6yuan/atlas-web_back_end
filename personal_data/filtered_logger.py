@@ -10,20 +10,25 @@ import logging
 PII_FIELDS = ('name', 'email', 'phone', 'ssn', 'password')
 
 
-def filter_datum(fields: List[str], redaction: str, message: str, separator: str) -> str:
+def filter_datum(
+    fields: List[str],
+    redaction: str,
+    message: str, 
+    separator: str
+) -> str:
     """
     Arguments:
     fields (list(str)) --> all fields to obfuscate
     redaction (str) --> what the fiield will be obfuscated by
     message (str) --> log time
     separator(str) --> character separating all log time fields
-        
+
     Methods:
     Regex Expression:
     (password | date_of_birth) --> matches either
     [^;]+ --> match characters (one or more) except a semicolon
     r'\1=' --> ensures the = sign is kept during re.sub with REDACTION
-        
+
     Returns:
     The result of the regex
     """
@@ -56,7 +61,8 @@ def get_db() -> mysql.connector.connection.MySQLConnection:
         host=host,
         database=database
     )
-    
+
+
 def get_logger() -> logging.Logger:
     """
     Get Logger Function
@@ -78,6 +84,7 @@ def get_logger() -> logging.Logger:
     logger.addHandler(stream_handler)
         
     return logger
+
 
 class RedactingFormatter(logging.Formatter):
     """ Redacting Formatter class
