@@ -25,22 +25,23 @@ def _hash_password(password: str) -> bytes:
     hashed = bcrypt.hashpw(hashed_pwd, salt)
     return hashed
 
+
 def _generate_uuid() -> str:
-        """
-        Generate UUIds
+    """
+    Generate UUIds
         
-        Returns:
-        String representation of a new UUID
-        """
-        new_identifier = uuid.uuid4()
-        return str(new_identifier)
+    Returns:
+    String representation of a new UUID
+    """
+    new_identifier = uuid.uuid4()
+    return str(new_identifier)
 
 class Auth:
     """Auth class to interact with the authentication database.
     """
     def __init__(self):
         self._db = DB()
-        
+
     """
     def register_user(self, email: str, password: str) -> User:
         if email and password:
@@ -49,5 +50,3 @@ class Auth:
             except NoResultFound:
                 raise ValueError("User {} already exists".format(email))
     """
-    
-
