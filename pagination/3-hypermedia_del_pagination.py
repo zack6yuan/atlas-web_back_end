@@ -39,6 +39,24 @@ class Server:
             }
         return self.__indexed_dataset
 
-    def get_hyper_index(self, index: int = None, page_size: int = 10) -> Dict:
-        data_length = len(self.dataset())
-        assert index < data_length
+    def get_hyper_index(
+        self, index: int = None,
+        page_size: int = 10
+    ) -> Dict:
+        assert isinstance(page_size, int)
+        assert page_size > 0
+        
+        new_dataset = self.indexed_dataset()
+        next_index = index + 2
+        
+        if index >= len(new_dataset):
+            raise AssertionError
+        
+        return {
+            "index": index,
+            "data": new_dataset,
+            "page_size": page_size,
+            "next_index": next_index,
+        }
+        
+        
