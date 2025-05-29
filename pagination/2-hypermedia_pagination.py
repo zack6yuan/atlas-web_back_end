@@ -11,14 +11,12 @@ from typing import List
 def index_range(page: int, page_size: int) -> Tuple:
     """
     Arguments:
-    page (int) --> pagination parameter
-    page_size (int) --> pagination parameter
-
+        page (int) --> pagination parameter
+        page_size (int) --> pagination parameter
     Methods:
-    Use start index and end index to handle pagination
-
+        Use start index and end index to handle pagination
     Returns:
-    A tuple of the start and end indexes
+        A tuple of the start and end indexes
     """
     start = (page - 1) * page_size
     end = start + page_size
@@ -34,7 +32,15 @@ class Server:
         self.__dataset = None
 
     def dataset(self) -> List[List]:
-        """Cached dataset
+        """
+        Cached dataset
+        Methods:
+            Checks that the dataset holds no value
+            Opens the CSV file
+            Creates a reader object
+            Creates a new list [index 1 to the end]
+        Returns:
+            The dataset
         """
         if self.__dataset is None:
             with open(self.DATA_FILE) as f:
@@ -47,17 +53,15 @@ class Server:
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
         """
         Arguemnts:
-        page --> the current page
-        page_size --> the size of the page
-
+            page --> the current page
+            page_size --> the size of the page
         Methods:
-        Verify integer types and values
-        self.dataset() --> access the full dataset / read csv file
-        Call the index_range function with page and page size
-        Check if arguments are in range for the dataset
-
+            Verify integer types and values
+            self.dataset() --> access the full dataset / read csv file
+            Call the index_range function with page and page size
+            Check if arguments are in range for the dataset
         Returns:
-        The dataset
+            The dataset
         """
         assert isinstance(page, int)
         assert (page > 0)
@@ -77,8 +81,17 @@ class Server:
     def get_hyper(self, page: int = 1, page_size: int = 10) -> dict:
         """
         Arguments:
-        page (int) --> pagination parameter / default value = 1
-        page_size (int) --> pagination parameter / default value = 10
+            page (int) --> pagination parameter / default value = 1
+            page_size (int) --> pagination parameter / default value = 10
+        Methods:
+            The dataset method is called with self.dataset()
+            get_page is called with (page and page_size)
+            Retrieve the length of the dataset
+            Use math.ceil --> rounds a number up to the nearest integer...
+            to get the number of total_pages
+            initialize a dictonary with values according to format
+        Returns:
+            The dictionary with specific values
         """
         dataset = self.dataset()
 
