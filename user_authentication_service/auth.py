@@ -29,12 +29,13 @@ def _hash_password(password: str) -> bytes:
 def _generate_uuid() -> str:
     """
     Generate UUIds
-        
+
     Returns:
     String representation of a new UUID
     """
     new_identifier = uuid.uuid4()
     return str(new_identifier)
+
 
 class Auth:
     """Auth class to interact with the authentication database.
