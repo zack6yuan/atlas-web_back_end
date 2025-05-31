@@ -41,7 +41,22 @@ class TestAccessNestedMap(unittest.TestCase):
             raise KeyError("Failed: KeyError")
         
 class TestGetJson(unittest.TestCase):
-    """ TestGetJson Class """
+    """ Test Get Json Class """
+    def test_get_json():
+        """ Test Get Json Function """
+        
+class TestMemoize(unittest.TestCase):
+    """ Test Memoize Class """
+    @patch('test_utils.a_method')
+    def test_memoize():
+        class TestClass:
+            
+            def a_method(self):
+                return 42
+            
+            @memoize
+            def a_property(self):
+                return self.a_method()
     
 
 
