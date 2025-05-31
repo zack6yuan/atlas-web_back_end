@@ -19,9 +19,9 @@ class TestAccessNestedMap(unittest.TestCase):
         Format: Argument, Path, Output """
     # Tests are running, checker not accepting for the decorator
     @parameterized.expand([
-        param({"a": 1}, ("a",), 1),
-        param({"a": {"b": 2}}, ("a",), {"b": 2}),
-        param({"a": {"b": 2}}, ("a", "b",), 2),
+        ({"a": 1}, ("a",), 1),
+        ({"a": {"b": 2}}, ("a",), {"b": 2}),
+        ({"a": {"b": 2}}, ("a", "b",), 2),
     ])
     def test_access_nested_map(self, nested_map: Mapping, path: Sequence, expected_result):
         """ Test Access Nested Map Function Test """
@@ -30,8 +30,8 @@ class TestAccessNestedMap(unittest.TestCase):
     
     # Complete, checker did not give points
     @parameterized.expand([
-        param({}, ("a",), {}),
-        param({"a": 1}, ("a", "b",), 1),
+        ({}, ("a",), {}),
+        ({"a": 1}, ("a", "b",), 1),
     ])
     def test_access_nested_map_exception(self, nested_map: Mapping, path: Sequence, expected_result):
         """ Test Access Nested Map Exception Test
@@ -44,6 +44,7 @@ class TestGetJson(unittest.TestCase):
     """ Test Get Json Class """
     def test_get_json():
         """ Test Get Json Function """
+        pass
         
 class TestMemoize(TestCase):
     """ Test Memoize Class """
