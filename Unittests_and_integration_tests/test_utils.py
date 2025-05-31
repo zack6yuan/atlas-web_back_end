@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """ Test Utils Unittest Module """
 import unittest
+from unittest.mock import patch, Mock, mock_open
 from parameterized import parameterized, param
 from utils import access_nested_map
 
@@ -28,6 +29,10 @@ class TestAccessNestedMap(unittest.TestCase):
         with self.assertRaises(KeyError):
             test_result = access_nested_map(nested_map, path)
             raise KeyError("Failed: KeyError")
+        
+class TestGetJson(unittest.TestCase):
+    def test_get_json():
+        
 
 
 if __name__ == '__main__':
