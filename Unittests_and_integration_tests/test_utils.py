@@ -7,6 +7,7 @@ from utils import access_nested_map
 
 class TestAccessNestedMap(unittest.TestCase):
     """ Format: Argument, Path, Output """
+    # Tests are running, checker not accepting for the decorator
     @parameterized.expand([
         param({"a": 1}, ("a",), 1),
         param({"a": {"b": 2}}, ("a",), {"b": 2}),
@@ -17,11 +18,13 @@ class TestAccessNestedMap(unittest.TestCase):
         test_result = access_nested_map(nested_map, path)
         self.assertEqual(test_result, expected_result)
     
+    # Complete, checker did not give points
     @parameterized.expand([
         param({}, ("a",), {}),
         param({"a": 1}, ("a", "b",), 1),
     ])
     def test_access_nested_map_exception(self, nested_map, path, expected_result):
+        """ Test Access Nested Map Exception Test """
         with self.assertRaises(KeyError):
             test_result = access_nested_map(nested_map, path)
             raise KeyError("Failed: KeyError")
