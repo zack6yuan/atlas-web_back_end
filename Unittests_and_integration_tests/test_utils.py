@@ -50,7 +50,7 @@ class TestMemoize(TestCase):
     @patch('test_utils.a_method')
     def test_memoize(self):
         class TestClass:
-            
+            """ TestCase Class """
             def a_method(self):
                 return 42
             
