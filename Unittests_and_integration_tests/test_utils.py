@@ -14,7 +14,9 @@ from typing import (
 
 
 class TestAccessNestedMap(unittest.TestCase):
-    """ Format: Argument, Path, Output """
+    """ Test Access Nested Map Class
+        Inherits from unittest.TestCase
+        Format: Argument, Path, Output """
     # Tests are running, checker not accepting for the decorator
     @parameterized.expand([
         param({"a": 1}, ("a",), 1),
@@ -32,10 +34,15 @@ class TestAccessNestedMap(unittest.TestCase):
         param({"a": 1}, ("a", "b",), 1),
     ])
     def test_access_nested_map_exception(self, nested_map: Mapping, path: Sequence, expected_result):
-        """ Test Access Nested Map Exception Test """
+        """ Test Access Nested Map Exception Test
+            Inherits fron unittest.TestCase """
         with self.assertRaises(KeyError):
             test_result = access_nested_map(nested_map, path)
             raise KeyError("Failed: KeyError")
+        
+class TestGetJson(unittest.TestCase):
+    """ TestGetJson Class """
+    
 
 
 
