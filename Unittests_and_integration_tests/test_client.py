@@ -15,6 +15,22 @@ class TestGithubOrgClient(unittest.TestCase):
     ])
     def test_has_license(self):
         pass
+    
+class TestIntegrationGithubOrgClient(unittest.TestCase):
+    """ Test Integration GitHub Org Client Class """
+    @parameterized_class(
+        "org_payload",
+        "repos_payload",
+        "expected_repos",
+        "apache2_repos"
+    )
+    def setUpClass(self):
+        """ Set Up Class Function """
+        pass
+    
+    def tearDownClass(self):
+        """ Tear Down Class Function """
+        pass
 
 
 
