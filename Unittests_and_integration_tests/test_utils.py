@@ -45,7 +45,7 @@ class TestGetJson(unittest.TestCase):
     def test_get_json():
         """ Test Get Json Function """
         
-class TestMemoize(unittest.TestCase):
+class TestMemoize(TestCase):
     """ Test Memoize Class """
     @patch('test_utils.a_method')
     def test_memoize():
