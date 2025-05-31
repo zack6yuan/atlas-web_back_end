@@ -10,8 +10,8 @@ class TestGithubOrgClient(unittest.TestCase):
         pass
     
     @parameterized.expand([
-        ({"liscense": {"key": "my_liscense"}}, "my_liscense"),
-        ({"liscense": {"key": "other_liscense"}}, "my_liscense"),
+        ({"liscense": {"key": "my_liscense"}}, "my_liscense", True),
+        ({"liscense": {"key": "other_liscense"}}, "my_liscense", False),
     ])
     def test_has_liscense(self):
         pass
