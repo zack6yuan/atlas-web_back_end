@@ -13,7 +13,9 @@ class TestGithubOrgClient(unittest.TestCase):
         ({"liscense": {"key": "my_liscense"}}, "my_liscense"),
         ({"liscense": {"key": "other_liscense"}}, "my_liscense"),
     ])
-    def test_has_liscense(self)
+    def test_has_liscense(self):
+        pass
+        
 
 
 
