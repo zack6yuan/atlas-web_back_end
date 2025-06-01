@@ -39,26 +39,6 @@ class TestAccessNestedMap(unittest.TestCase):
         with self.assertRaises(KeyError):
             test_result = access_nested_map(nested_map, path)
             raise KeyError("Failed: KeyError")
-"""  
-class TestGetJson(unittest.TestCase):
-    """ Test Get Json Class """
-    def test_get_json():
-        """ Test Get Json Function """
-        pass
-        
-class TestMemoize(TestCase):
-    """ Test Memoize Class """
-    @patch('test_utils.a_method')
-    def test_memoize(self):
-        class TestClass:
-            """ TestCase Class """
-            def a_method(self):
-                return 42
-            
-            @memoize
-            def a_property(self):
-                return self.a_method()
-"""
 
 
 
