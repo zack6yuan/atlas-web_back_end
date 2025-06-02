@@ -39,7 +39,11 @@ class TestAccessNestedMap(unittest.TestCase):
         with self.assertRaises(KeyError):
             test_result = access_nested_map(nested_map, path)
             raise KeyError("Failed: KeyError")
-
+        
+    def test_get_json(self, url: str, expected_result):
+        """ Test Get Json and ensure that the function returns a Mock obeject """
+        
+        
 
 
 if __name__ == '__main__':
