@@ -2,7 +2,7 @@
 """ Client testing module """
 import unittest
 from unittest.mock import Mock, patch, PropertyMock
-from parameterized import parameterized, param
+from parameterized import parameterized, param, parameterized_class
 from client import GithubOrgClient
 from utils import get_json
 import client
@@ -37,6 +37,42 @@ class TestGithubOrgClient(unittest.TestCase):
             github_client = GithubOrgClient("mocked_org")
             value = github_client.public_repos()
             self.assertEqual(value, ["repo_name"])
+            
+    @patch('client.get_json')
+    def test_public_repos(self, mock_json):
+        """
+        Methods:
+        """
+        github_client = GithubOrgClient('Tesla')
+        
+        with patch.object(GithubOrgClient._public_repos_url, 'org', new_callable=PropertyMock) as TestMock:
+            TestMock.return_value = {"repos_url": "https://api.github.com/orgs/github_client/repos"}
+        
+        mock_json.assert_called_once()
+
+    @parameterized.expand([
+        param({"liscense": {"key": "my_liscense"}}, "my_liscense", True),
+        param({"liscense": {"key": "other_liscense"}}, "my_liscense", False),
+    ])
+    def test_has_license(self, repo, liscense_key, expected_result):
+        output = GithubOrgClient.has_license(repo, liscense_key)
+        self.assertEqual(output, expected_result)
+        
+@parameterized_class([
+    {'org_payload', 'repos_payload', 'expected_repos', 'apache2_repos'}
+])
+class TestIntegrationGithubOrgClient(unittest.TestCase):
+    """ Test Integration Github Org Client Class """
+    @classmethod
+    def setUpClass(self):
+        """ set up class function """
+        self.patcher = patch('requests.get')
+        self.mock = self.patcher.start()
+    
+    @classmethod
+    def tearDownClass(self):
+        """ tear down class function """
+        self.patcher.stop()
         
 
 if __name__ == '__main__':
