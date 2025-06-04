@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """ Test Utils Unittest Module """
 import unittest
-from unittest.mock import patch, Mock, mock_open
+from unittest.mock import patch, Mock, mock_open, MagicMock
 from parameterized import parameterized, param
 from utils import access_nested_map
 from typing import (
@@ -39,8 +39,8 @@ class TestAccessNestedMap(unittest.TestCase):
         with self.assertRaises(KeyError):
             test_result = access_nested_map(nested_map, path)
             raise KeyError("Failed: KeyError")
-        
-    def test_get_json(self, url: str, expected_result):
+   
+    def test_get_json(self, url, payload, Mock):
         """ Test Get Json and ensure that the function returns a Mock obeject """
         
         
