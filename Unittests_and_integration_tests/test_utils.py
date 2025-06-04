@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
+""" Test utils module """
 import unittest
 from unittest.mock import Mock, patch
 from parameterized import parameterized, param
 from utils import access_nested_map, get_json, memoize
-""" Test utils module """
+
+
 class TestAccessNestedMap(unittest.TestCase):
     """ Test class for access nested map """
     @parameterized.expand([
