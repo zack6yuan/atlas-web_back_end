@@ -1,43 +1,36 @@
 #!/usr/bin/env python3
-""" Test Utils Unittest Module """
 import unittest
-from unittest.mock import patch, Mock
+from unittest.mock import Mock, patch
 from parameterized import parameterized, param
 from utils import access_nested_map, get_json, memoize
-from typing import Mapping, Sequence
-
-
+""" Test utils module """
 class TestAccessNestedMap(unittest.TestCase):
-    """ Test Access Nested Map Class
-        Inherits from unittest.TestCase
-        Format: Argument, Path, Output """
+    """ Test class for access nested map """
     @parameterized.expand([
         param({"a": 1}, ("a",), 1),
         param({"a": {"b": 2}}, ("a",), {"b": 2}),
         param({"a": {"b": 2}}, ("a", "b",), 2),
     ])
-    def test_access_nested_map(self, nested_map: Mapping, path: Sequence, expected_result):
-        """ Test Access Nested Map Function Test """
+    def test_access_nested_map(self, nested_map, path, expected_result):
+        """ Access nested map test """
         test_result = access_nested_map(nested_map, path)
         self.assertEqual(test_result, expected_result)
-
+        
     @parameterized.expand([
         param({}, ("a",), {}),
         param({"a": 1}, ("a", "b",), 1),
     ])
-    def test_access_nested_map_exception(self, nested_map: Mapping, path: Sequence, expected_result):
-        """ Test Access Nested Map Exception Test
-            Inherits fron unittest.TestCase """
+    def test_access_nested_map_exception(self, nested_map, path, expected_result):
+        """ Access nested map exception test """
         with self.assertRaises(KeyError):
-            test_result = access_nested_map(nested_map, path)
-            raise KeyError("Failed: KeyError")
-   
+            access_nested_map(nested_map, path)
+            
 class TestGetJson(unittest.TestCase):
     """ TestGetJson Class
     Inherits fron unittest.TestCase """
     @parameterized.expand([
-        ("http://example.com", {"payload": True}),
-        ("http://holberton.io", {"payload": False}),
+        param("http://example.com", {"payload": True}),
+        param("http://holberton.io", {"payload": False}),
     ])
     @patch('utils.requests.get')
     def test_get_json(self, test_url, test_payload, mock_get):
@@ -78,6 +71,6 @@ class TestMemoize(unittest.TestCase):
             
             mock_obj.assert_called_once()
             
-
+            
 if __name__ == '__main__':
     unittest.main()

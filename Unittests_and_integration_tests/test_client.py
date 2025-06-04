@@ -1,20 +1,43 @@
 #!/usr/bin/env python3
 """ Test Client Module """
 import unittest
+from unittest.mock import patch, Mock, PropertyMock
+from parameterized import parameterized, parameterized_class, param
+from typing import Dict
+from client import GitHubOrgClient
 
 
 class TestGithubOrgClient(unittest.TestCase):
     """ Test GitHub Org Client Class """
-    def test_org(self):
+    @parameterized.expand([
+        param('google'),
+        param('abc'),
+    ])
+    @patch('client.get_json')
+    def test_org(self, org_name, mock_get):
         """ Test Org Function """
-        pass
+        client_instance = GitHubOrgClient(org_name)
+        test_result = client_instance.org()
+        self.assertEqual(test_result,)
+        
+        
+        
+        
+        
+        
+    def test_public_repos_url(self):
+        """ Test Public Repos Function """
+        with patch('client.GithubOrgClient', new_callable = PropertyMock) as mock_obj:
+            
+        
     
     @parameterized.expand([
-        ({"liscense": {"key": "my_liscense"}}, "my_liscense", True),
-        ({"liscense": {"key": "other_liscense"}}, "my_liscense", False),
+        param({"liscense": {"key": "my_liscense"}}, "my_liscense", True),
+        param({"liscense": {"key": "other_liscense"}}, "my_liscense", False),
     ])
-    def test_has_license(self):
-        pass
+    def test_has_license(self, repo: Dict[str, Dict], liscense_key: str, expected_result):
+        output = GithubOrgClient.has_license(repo, liscense_key)
+        self.assertEqual(output, expected_result)
     
 class TestIntegrationGithubOrgClient(unittest.TestCase):
     """ Test Integration GitHub Org Client Class """
