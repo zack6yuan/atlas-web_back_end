@@ -1,18 +1,10 @@
 #!/usr/bin/env python3
 """ Test Utils Unittest Module """
 import unittest
-from unittest.mock import patch, Mock, mock_open
+from unittest.mock import patch, Mock
 from parameterized import parameterized, param
-from utils import access_nested_map
-from utils import get_json
-from utils import memoize
-from typing import (
-    Mapping,
-    Sequence,
-    Any,
-    Dict,
-    Callable,
-)
+from utils import access_nested_map, get_json, memoize
+from typing import Mapping, Sequence
 
 
 class TestAccessNestedMap(unittest.TestCase):
@@ -20,9 +12,9 @@ class TestAccessNestedMap(unittest.TestCase):
         Inherits from unittest.TestCase
         Format: Argument, Path, Output """
     @parameterized.expand([
-        ({"a": 1}, ("a",), 1),
-        ({"a": {"b": 2}}, ("a",), {"b": 2}),
-        ({"a": {"b": 2}}, ("a", "b",), 2),
+        param({"a": 1}, ("a",), 1),
+        param({"a": {"b": 2}}, ("a",), {"b": 2}),
+        param({"a": {"b": 2}}, ("a", "b",), 2),
     ])
     def test_access_nested_map(self, nested_map: Mapping, path: Sequence, expected_result):
         """ Test Access Nested Map Function Test """
@@ -30,8 +22,8 @@ class TestAccessNestedMap(unittest.TestCase):
         self.assertEqual(test_result, expected_result)
 
     @parameterized.expand([
-        ({}, ("a",), {}),
-        ({"a": 1}, ("a", "b",), 1),
+        param({}, ("a",), {}),
+        param({"a": 1}, ("a", "b",), 1),
     ])
     def test_access_nested_map_exception(self, nested_map: Mapping, path: Sequence, expected_result):
         """ Test Access Nested Map Exception Test
