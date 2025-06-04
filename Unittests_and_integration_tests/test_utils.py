@@ -9,9 +9,9 @@ from utils import access_nested_map, get_json, memoize
 class TestAccessNestedMap(unittest.TestCase):
     """ Test class for access nested map """
     @parameterized.expand([
-        param({"a": 1}, ("a",), 1),
-        param({"a": {"b": 2}}, ("a",), {"b": 2}),
-        param({"a": {"b": 2}}, ("a", "b",), 2),
+        ({"a": 1}, ("a",), 1),
+        ({"a": {"b": 2}}, ("a",), {"b": 2}),
+        ({"a": {"b": 2}}, ("a", "b",), 2),
     ])
     def test_access_nested_map(self, nested_map, path, expected_result):
         """ Access nested map test """
@@ -19,8 +19,8 @@ class TestAccessNestedMap(unittest.TestCase):
         self.assertEqual(test_result, expected_result)
         
     @parameterized.expand([
-        param({}, ("a",), {}),
-        param({"a": 1}, ("a", "b",), 1),
+        ({}, ("a",), {}),
+        ({"a": 1}, ("a", "b",), 1),
     ])
     def test_access_nested_map_exception(self, nested_map, path, expected_result):
         """ Access nested map exception test """
@@ -31,8 +31,8 @@ class TestGetJson(unittest.TestCase):
     """ TestGetJson Class
     Inherits fron unittest.TestCase """
     @parameterized.expand([
-        param("http://example.com", {"payload": True}),
-        param("http://holberton.io", {"payload": False}),
+        ("http://example.com", {"payload": True}),
+        ("http://holberton.io", {"payload": False}),
     ])
     @patch('utils.requests.get')
     def test_get_json(self, test_url, test_payload, mock_get):

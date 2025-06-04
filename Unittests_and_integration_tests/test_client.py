@@ -6,13 +6,14 @@ from parameterized import parameterized, param, parameterized_class
 from client import GithubOrgClient
 from utils import get_json
 import client
+from fixtures import TEST_PAYLOAD
 
 
 class TestGithubOrgClient(unittest.TestCase):
     """ Test github org client class """
     @parameterized.expand([
-        param('google'),
-        param('abc'),
+        ('google'),
+        ('abc'),
     ])
     @patch('client.get_json')
     def test_org(self, org_name, mock_get):
@@ -43,23 +44,27 @@ class TestGithubOrgClient(unittest.TestCase):
         """
         Methods:
         """
-        github_client = GithubOrgClient('Tesla')
+        mock_json.return_value = [{"name": "Tesla"}]
         
-        with patch.object(GithubOrgClient._public_repos_url, 'org', new_callable=PropertyMock) as TestMock:
+        with patch.object(GithubOrgClient, 'org', new_callable=PropertyMock) as TestMock:
             TestMock.return_value = {"repos_url": "https://api.github.com/orgs/github_client/repos"}
+            
+        github_client = GithubOrgClient('Tesla')
+        value = github_client.public_repos()
         
         mock_json.assert_called_once()
+        self.assertEqual(result, ["Tesla"])
 
     @parameterized.expand([
-        param({"liscense": {"key": "my_liscense"}}, "my_liscense", True),
-        param({"liscense": {"key": "other_liscense"}}, "my_liscense", False),
+        ({"license": {"key": "my_license"}}, "my_license", True),
+        ({"license": {"key": "other_license"}}, "my_license", False),
     ])
-    def test_has_license(self, repo, liscense_key, expected_result):
-        output = GithubOrgClient.has_license(repo, liscense_key)
+    def test_has_license(self, repo, license_key, expected_result):
+        output = GithubOrgClient.has_license(repo, license_key)
         self.assertEqual(output, expected_result)
         
 @parameterized_class([
-    {'org_payload', 'repos_payload', 'expected_repos', 'apache2_repos'}
+    {'org_payload': {}, 'repos_payload': {}, 'expected_repos': {}, 'apache2_repos': {}}
 ])
 class TestIntegrationGithubOrgClient(unittest.TestCase):
     """ Test Integration Github Org Client Class """
