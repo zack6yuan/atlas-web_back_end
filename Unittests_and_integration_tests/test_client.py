@@ -18,7 +18,7 @@ class TestGithubOrgClient(unittest.TestCase):
         """ Test Org Function """
         client_instance = GitHubOrgClient(org_name)
         test_result = client_instance.org()
-        self.assertEqual(test_result,)
+        mock_get.assert_called_once_with("https://api.github.com/orgs/{}".format(org_name))
         
         
         
