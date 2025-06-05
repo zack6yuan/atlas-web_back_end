@@ -24,7 +24,7 @@ class TestGithubOrgClient(unittest.TestCase):
         """
         Test Org Function
         Arguments:
-            org_name -->
+            org_name --> name of the organization
         """
         client_instance = GithubOrgClient(org_name)
         test_result = client_instance.org()
