@@ -69,6 +69,7 @@ class TestGetJson(unittest.TestCase):
             test_payload --> Mocked json data
             mock_get --> requests.get mock object
         Methods:
+            @patch: decorator --> replace requests.get with mock object
             Create a new Mock object
         Returns:
             The mock response

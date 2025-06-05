@@ -26,6 +26,7 @@ class TestGithubOrgClient(unittest.TestCase):
         Arguments:
             org_name --> name of the organization
         Methods:
+            @patch: decorator --> replace get_json with mock object
             Create new client instance
             assert_called_once_with --> assert called once
         """
@@ -55,6 +56,7 @@ class TestGithubOrgClient(unittest.TestCase):
         """
         Test Public Repos Function
         Arguments:
+            @patch: decorator --> replace get_json with mock object
             self --> instnace of the class
             mock_json --> mock json method
         """
