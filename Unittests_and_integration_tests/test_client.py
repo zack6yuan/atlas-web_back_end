@@ -25,6 +25,8 @@ class TestGithubOrgClient(unittest.TestCase):
         Test Org Function
         Arguments:
             org_name --> name of the organization
+        Methods:
+            assert_called_once_with --> assert called once
         """
         client_instance = GithubOrgClient(org_name)
         test_result = client_instance.org()
