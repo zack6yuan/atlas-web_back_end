@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-""" Client testing module """
+""" Client Testing Module """
 import unittest
 from unittest.mock import Mock, patch, PropertyMock
-from parameterized import parameterized, param, parameterized_class
+from parameterized import parameterized, parameterized_class
 from client import GithubOrgClient
 from utils import get_json
 import client
@@ -10,14 +10,22 @@ from fixtures import TEST_PAYLOAD
 
 
 class TestGithubOrgClient(unittest.TestCase):
-    """ Test github org client class """
+    """
+    Test GithubOrgClient Class
+    Inherits from unittest.TestCase
+    """
+    """ Allow multiple test cases """
     @parameterized.expand([
         ('google'),
         ('abc'),
     ])
     @patch('client.get_json')
     def test_org(self, org_name, mock_get):
-        """ Test Org Function """
+        """
+        Test Org Function
+        Arguments:
+            org_name -->
+        """
         client_instance = GithubOrgClient(org_name)
         test_result = client_instance.org()
         mock_get.assert_called_once_with("https://api.github.com/orgs/{}".format(org_name))
@@ -42,10 +50,17 @@ class TestGithubOrgClient(unittest.TestCase):
     @patch('client.get_json')
     def test_public_repos(self, mock_json):
         """
-        Methods:
+        Test Public Repos Function
+        Arguments:
+            self --> instnace of the class
+            mock_json --> mock json method
         """
         mock_json.return_value = [{"name": "Tesla"}]
         
+        """
+        Methods:
+            PropertyMock --> used to mock @property attributes
+        """
         with patch.object(GithubOrgClient, 'org', new_callable=PropertyMock) as TestMock:
             TestMock.return_value = {"repos_url": "https://api.github.com/orgs/github_client/repos"}
             
@@ -55,28 +70,52 @@ class TestGithubOrgClient(unittest.TestCase):
         mock_json.assert_called_once()
         self.assertEqual(result, ["Tesla"])
 
+    """ Allow multiple test cases """
     @parameterized.expand([
         ({"license": {"key": "my_license"}}, "my_license", True),
         ({"license": {"key": "other_license"}}, "my_license", False),
     ])
     def test_has_license(self, repo, license_key, expected_result):
+        """
+        Test Has License
+        Arguments:
+            self --> instance of the class
+            license_key --> license identifier (key)
+            expected_result --> return value to compare to
+        """
         output = GithubOrgClient.has_license(repo, license_key)
         self.assertEqual(output, expected_result)
         
+""" Add parameters to entire test class """
 @parameterized_class([
     {'org_payload': {}, 'repos_payload': {}, 'expected_repos': {}, 'apache2_repos': {}}
 ])
 class TestIntegrationGithubOrgClient(unittest.TestCase):
-    """ Test Integration Github Org Client Class """
+    """
+    Test Integration Github Org Client Class
+    Inherits from unittest.TestCase
+    """
     @classmethod
     def setUpClass(self):
-        """ set up class function """
+        """
+        setUp class function
+        Arguments:
+            self --> instance of the class
+        Methods:
+            Starts a patcher
+        """
         self.patcher = patch('requests.get')
         self.mock = self.patcher.start()
     
     @classmethod
     def tearDownClass(self):
-        """ tear down class function """
+        """
+        tearDown class function
+        Arguments:
+            self --> instance of the class
+        Methods:
+            Stops the patcher
+        """
         self.patcher.stop()
         
 
