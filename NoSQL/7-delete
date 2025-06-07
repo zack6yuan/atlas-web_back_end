@@ -1,4 +1,4 @@
 // Deletes all documents per parameters
-db.school.deleteOne({
+db.school.deleteMany({
     name: "Holberton school"
 })
