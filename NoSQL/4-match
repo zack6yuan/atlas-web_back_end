@@ -1,0 +1,4 @@
+// Lists all documents with selected parameters in the collection "school"
+db.school.find({
+    name: "Holberton school"
+})
