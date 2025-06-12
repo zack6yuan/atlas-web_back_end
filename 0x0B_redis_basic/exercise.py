@@ -7,4 +7,4 @@ class Cache:
         pass
 
     def store(self, data) -> str:
-
+        pass
