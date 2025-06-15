@@ -5,6 +5,8 @@ from pymongo import MongoClient
 
 def list_all(mongo_collection):
     """ Lists all documents in a collection """
-    documents = mongo_collection.find({})
-    for document in documents:
-        return(document)
+    document_list = []
+    document = mongo_collection.find({})
+    if document:
+        document.append(document_list)
+    return document_list
