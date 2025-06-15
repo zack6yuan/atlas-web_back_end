@@ -1,10 +1,8 @@
 #!/usr/bin/env python3
-def insert_school(mongo_collection, **kwargs):
-    """
-    Params:
-        mongo_collection: mongodb collection
-        **kwargs: multiple arguments
+""" Insert a document in Python """
+from pymongo import MongoClient
 
-    Returns:
-        the new _id
-    """
+
+def insert_school(mongo_collection, **kwargs):
+    """ Inserts a new document in a collection based on kwargs """
+    
