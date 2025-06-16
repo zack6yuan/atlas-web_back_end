@@ -28,7 +28,7 @@ class Cache:
         return new_key
     
     def get(key, fn: Optional[Callable]):
-        if key not in self._redis:
+        if key is None:
             return None
         
             
