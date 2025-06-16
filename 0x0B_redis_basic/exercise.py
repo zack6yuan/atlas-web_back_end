@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import redis
 import uuid
-from typing import Union
+from typing import Union, Optional
 
 
 class Cache:
@@ -26,3 +26,16 @@ class Cache:
         self._redis.set(new_key, data)
         
         return new_key
+    
+    def get(key, fn: Optional[Callable]):
+        if key not in self._redis:
+            return None
+        
+            
+    def get_str(self):
+        """ Get Self Function """
+        pass
+    
+    def get_int(self):
+        """ Get Int Function """
+        
