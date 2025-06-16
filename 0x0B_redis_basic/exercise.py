@@ -1,15 +1,17 @@
 #!/usr/bin/env python3
-from typing import String, Union
+import redis
 import uuid
+from typing import Union
 
 
 class Cache:
     """ Cache Class """
     def __init__(self):
         """ init method """
-        pass
+        self._redis = redis.Redis() # Store an instance of redis
+        self._redis.flushdb()
 
-    def store(self, data: Union[str, bytes, int, float]) -> str:
+    def store(self, data: Union[bytes, str, int, float]) -> str:
         """
         Params:
             self --> instance of the class
@@ -20,6 +22,8 @@ class Cache:
         Returns:
             the key
         """
-        new_key = uuid.uuid4()
-        input_data = redis.Redis()
+        data = ""
+        new_key = str(uuid.uuid4())
+        self._redis.set(new_key, data)
         
+        return new_key
