@@ -11,7 +11,7 @@ class Cache:
         self._redis = redis.Redis() # Store an instance of redis
         self._redis.flushdb()
 
-    def store(self, data: Union[bytes, str, int, float]) -> str:
+    def store(self, data: Union[str, bytes, int, float]) -> str:
         """
         Params:
             self --> instance of the class
