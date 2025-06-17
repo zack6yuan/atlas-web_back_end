@@ -4,8 +4,8 @@ import uuid
 from typing import Union, Optional, Callable
 from functools import wraps
 
-def count_calls(func):
-    @wraps(func)
+def count_calls(method: Callable) -> Callable:
+    @wraps(method)
     def wrapper(self, *args, **kwds):
         pass
     return wrapper
