@@ -1,7 +1,6 @@
 // Inserts a document in the collection school with an attribute
+
 db.school.update(
-    {
-        name: "Holberton school",
-        address: "972 Mission street"
-    }
+    {name: "Holberton school},
+    {$set:{address: "972 Mission street}}
 )
