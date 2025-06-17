@@ -2,4 +2,4 @@
 CREATE VIEW need_meeting AS
 SELECT name
 FROM students
-WHERE (score < 80 AND last_meeting IS NULL AND CURDATE(), INTERVAL -1 MONTH);
+WHERE (score < 80 AND last_meeting IS NULL);
