@@ -3,6 +3,7 @@ DELIMITER //
 CREATE TRIGGER decreaser AFTER INSERT ON orders
 FOR EACH ROW
 BEGIN
-    SET items = items - quantity;
+    UPDATE quantity
+    SET quantity = quantity - number;
 END;//
 DELIMITER ;
