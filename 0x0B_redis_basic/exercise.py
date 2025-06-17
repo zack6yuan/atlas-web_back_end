@@ -9,8 +9,13 @@ def count_calls(method: Callable) -> Callable:
     def wrapper(self, *args, **kwds):
         pass
     return wrapper
-        
-        
+
+def call_history(method: Callable) -> Callable:
+    @wraps(method)
+    def wrapper(self, *args, **kwds):
+        pass
+    return wrapper
+
 
 class Cache:
     """ Cache Class """
