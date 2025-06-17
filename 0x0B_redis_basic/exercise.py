@@ -6,15 +6,18 @@ from functools import wraps
 
 def count_calls(method: Callable) -> Callable:
     @wraps(method)
-    def wrapper(self, *args, **kwds):
+    def wrapper(self, *args, **kwargs):
         pass
     return wrapper
 
 def call_history(method: Callable) -> Callable:
     @wraps(method)
-    def wrapper(self, *args, **kwds):
-        pass
+    def wrapper(self, *args, **kwargs):
+        self._redis.rpush()
     return wrapper
+
+def replay():
+    pass
 
 
 class Cache:
