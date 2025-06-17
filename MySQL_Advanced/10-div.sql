@@ -1,5 +1,5 @@
 -- Creates a function SafeDiv
-DELIMITER $ -- set delimiter so function does not end with semicolons
+DELIMITER $$ -- set delimiter so function does not end with semicolons
 CREATE FUNCTION SafeDiv(
     a INT,
     b INT
