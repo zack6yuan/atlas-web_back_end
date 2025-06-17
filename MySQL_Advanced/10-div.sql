@@ -1,5 +1,5 @@
 -- Creates a function SafeDiv
-DELIMITER $$ -- set delimiter so function does not end with semicolons
+DELIMITER // -- set delimiter so function does not end with semicolons
 CREATE FUNCTION SafeDiv(
     a INT,
     b INT
@@ -11,6 +11,6 @@ BEGIN
     ELSE
         RETURN a / b;
     END IF;
-END $$
+END //
 
 DELIMITER ; -- set the delimiter back to the semicolon
