@@ -1,4 +1,8 @@
 -- Creates a trigger that decreases the quantity of an item after adding a new order
-DROP TRIGGER IF EXISTS trigger
-
-CREATE TRIGGER decreaser
+DELIMITER //
+CREATE TRIGGER decreaser AFTER INSERT ON orders
+FOR EACH ROW
+BEGIN
+    SET items = items - quantity;
+END;//
+DELIMITER ;
