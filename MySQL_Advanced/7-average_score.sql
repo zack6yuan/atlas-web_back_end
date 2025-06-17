@@ -1,0 +1,1 @@
+-- Creates a stored procesure that computes and stores the average score for a student

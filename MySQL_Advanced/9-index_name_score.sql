@@ -1,0 +1,1 @@
+-- Creates an index on the table names and the first letter of name and the score

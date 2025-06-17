@@ -1,0 +1,2 @@
+-- Creates a trigger that resets the attribute valid_email
+-- Only when the email has been changed
