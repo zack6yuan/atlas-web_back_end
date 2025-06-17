@@ -1,7 +1,9 @@
 -- Lists all bands with "Glam rock" as their main style, ranked by their longevity
-DROP TABLE IF EXISTS bands
-
-CREATE TABLE IF NOT EXISTS bands (
-    band_name VARCHAR(255) PRIMARY KEY
-    lifespan INT
-)
+SELECT
+    band_name, split - formed AS lifespan
+FROM
+    metal_bands
+GROUP BY
+    band_name
+ORDER BY
+    lifespan DESC
