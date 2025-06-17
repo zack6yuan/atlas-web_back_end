@@ -5,7 +5,7 @@
 def schools_by_topic(mongo_collection, topic):
     """ Schools by topic function """
     topics_list = []
-    topics = mongo_collection.find()
+    topics = mongo_collection.find(topic)
     for topic in topics:
         topics_list.append(topic)
     return topics_list
