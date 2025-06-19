@@ -13,7 +13,7 @@ def count_calls(method: Callable) -> Callable:
 def call_history(method: Callable) -> Callable:
     @wraps(method)
     def wrapper(self, *args, **kwargs):
-        self._redis.rpush()
+        self._redis.rpush(str(args))
     return wrapper
 
 def replay():
