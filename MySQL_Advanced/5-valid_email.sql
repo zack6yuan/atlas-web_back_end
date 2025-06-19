@@ -4,6 +4,8 @@ DELIMITER //
 CREATE TRIGGER reset_email BEFORE UPDATE ON email
 FOR EACH ROW
 BEGIN
-    SET NEW.valid_email = 0;
+    IF OLD.email != NEW.email:
+        SET NEW.valid_email = 0;
+    END IF;
 END;//
 DELIMITER ;
