@@ -1,0 +1,1 @@
+// function displayMessage that prints in STDOUT the string argument

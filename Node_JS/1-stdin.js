@@ -1,0 +1,1 @@
+// program 1-stdin.js that is executed through the command line
