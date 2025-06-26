@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 // Small HTTP server using the http module
-const http = require('http')
+const app = require('http')
 
-http.createServer((request, response) => {
+app.createServer((request, response) => {
     response.write("Hello Holberton School!");
     response.end()
 }).listen(1245);
