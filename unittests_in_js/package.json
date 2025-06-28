@@ -1,5 +1,8 @@
 {
     "scripts": {
         "test": "mocha"
+    },
+    "dependencies": {
+        "ansi-colors": "^4.1.3"
     }
 }
