@@ -1,16 +1,18 @@
 #!/usr/bin/env node
 // Calculate number function
 function calculateNumber(type, a, b) {
+    let new_a = Math.round(a)
+    let new_b = Math.round(b)
     if (type === "SUM") {
-        return Math.round(a) + Math.round(b)
+        return new_a + new_b;
     } else if (type === "SUBTRACT") {
-        return Math.round(a) - Math.round(b)
+        return new_a - new_b;
     } else if (type === "DIVIDE") {
-        return Math.round(a) / Math.round(b)
-    } else if (Math.round(b) === 0) {
-        return "Error"
-    } else {
-        return
+        return new_a / new_b;
+    } else if (type === "DIVIDE") {
+        if (new_b === 0) {
+            return "Error"
+        }
     }
 }
 
