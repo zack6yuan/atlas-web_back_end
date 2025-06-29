@@ -7,3 +7,5 @@ function calculateNumber(a, b){
     
     return sum
 }
+
+module.exports = calculateNumber()
