@@ -1,5 +1,6 @@
 const assert = require('assert')
 const chai = require('chai')
+const {expect} = chai;
 const calculateNumber = require('./1-calcul.js')
 describe('CalculateNumber', function () {
     it('should return the sum, difference, and quotient of integers', function () {
