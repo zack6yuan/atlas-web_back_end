@@ -8,11 +8,10 @@ function calculateNumber(type, a, b) {
     } else if (type === "SUBTRACT") {
         return new_a - new_b;
     } else if (type === "DIVIDE") {
-        return new_a / new_b;
-    } else if (type === "DIVIDE") {
         if (new_b === 0) {
             return "Error"
         }
+        return new_a / new_b;
     }
 }
 
