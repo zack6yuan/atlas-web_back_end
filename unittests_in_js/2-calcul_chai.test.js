@@ -1,6 +1,6 @@
 const chai = require('chai')
 const {expect} = chai;
-const calculateNumber = require('./2-calcul.js')
+const calculateNumber = require('./2-calcul_chai.js')
 describe('CalculateNumber', function () {
     it('should return the sum, difference, and quotient of integers', function () {
         expect(calculateNumber("SUM", 1.4, 4.5)).to.equal(6)
