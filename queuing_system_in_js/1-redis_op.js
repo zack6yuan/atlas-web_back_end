@@ -9,8 +9,7 @@ try {
 }
 
 function setNewSchool(schoolName, value) {
-    redis.set(schoolName, value);
-    redis.print("Values set!");
+    redis.set(schoolName, value, redis.print);
 }
 
 function displaySchoolValue(schoolName) {
