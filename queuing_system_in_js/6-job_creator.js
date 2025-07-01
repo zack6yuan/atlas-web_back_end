@@ -10,10 +10,10 @@ queue.on('error', function() {
     console.log('Notification job failed')
 })
 
-queue.on('job complete', function() {
-    console.log('Notification job completed')
+queue.on('job enqueue', function(id) {
+    console.log(`Notification job created: ${id}`)
 })
 
-queue.on('job complete', function(id) {
-    console.log(`Notification job created: ${id}`)
+queue.on('job complete', function() {
+    console.log('Notification job completed')
 })
