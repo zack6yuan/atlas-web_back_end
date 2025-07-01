@@ -2,8 +2,9 @@ const { createPushNotificationsJobs } = require('./8-job');
 const kue = require('kue');
 const queue = kue.createQueue();
 
+// Enable job processing using "true"
 before(function() {
-    queue.testMode.enter();
+    queue.testMode.enter(true);
 });
 
 afterEach(function() {
