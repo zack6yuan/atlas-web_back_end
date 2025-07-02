@@ -27,8 +27,8 @@ const listProducts = [
 
 function getItemById(id) {
     for (item of listProducts) {
-        if (search == id) {
-            return 
+        if (item.id === id) {
+            return item
         }
     }
 }
