@@ -9,4 +9,4 @@ function countStudents() {
 }
 
 
-module.exports = countStudents()
+module.exports = countStudents;

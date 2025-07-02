@@ -7,3 +7,7 @@ const port = 1245
 app.get('/', (req, res) => {
     res.send('Hello World!')
 })
+
+app.listen(port, () => {
+    console.log(`API available on localhost port ${port}`)
+})
