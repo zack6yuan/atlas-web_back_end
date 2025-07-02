@@ -7,3 +7,4 @@ function getPaymentTokenFromAPI(success) {
         return
     }
 }
+module.exports = getPaymentTokenFromAPI;
