@@ -7,7 +7,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/cart/:id', (req, res) => {
-    console.log(`Payment methods for cart: ${id}`)
+    res.send(`Payment methods for cart: ${id}`)
 })
 
 app.listen(port, () => {
