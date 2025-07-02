@@ -39,3 +39,21 @@ function getItemById(id) {
 app.get('/list_products', (req, res) => {
     res.send(listProducts)
 })
+
+const redis = require('redis')
+const client = redis.createClient()
+
+try {
+    await client.connect()
+    console.log("Redis client connected to the server")
+} catch (err) {
+    console.log(`Redis client not connected to the server ${err}`)
+}
+
+function reserveStockById(itemId, stock) {
+    // Set in Redis the stock for the key item.Item_ID
+}
+
+async function getCurrentReservedStockById(itemID) {
+    // Return the reserved stock for a specific item
+}
