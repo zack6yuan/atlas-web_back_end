@@ -26,9 +26,9 @@ const listProducts = [
 ]
 
 function getItemById(id) {
-    for (item of listProducts) {
-        if (item.id === id) {
-            return item
+    for (item of listProducts) { // item in listProducts
+        if (item.id === id) { // if the id matches
+            return item // reutrn the item
         }
     }
 }
