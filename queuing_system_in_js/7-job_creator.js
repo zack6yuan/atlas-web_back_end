@@ -1,3 +1,4 @@
+// Array "jobs" with data according to format
 const jobs = [
   {
     phoneNumber: '4153518780',
@@ -45,10 +46,10 @@ const jobs = [
   }
 ];
 
-const kue = require('kue')
-const queue = kue.createQueue()
+const kue = require('kue') // require the Kue module
+const queue = kue.createQueue() // create a queue with Kue
 
-for (x = 0; x < jobs.length; x++) {
+for (x = 0; x < jobs.length; x++) { // loop through Jobs array
     queue.create('push_notification_code_2', {
         jobs
     }).save()
