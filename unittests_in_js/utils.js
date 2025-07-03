@@ -1,22 +1,14 @@
-#!/usr/bin/env node
-export class Utils {
-    constructor() {
-        this.calculateNumber = calculateNumber
-    }
-    function calculateNumber(type, a, b) {
-        let new_a = Math.round(a)
-        let new_b = Math.round(b)
+module.exports = class Utils {
+    calculateNumber(type, a, b) {
         if (type === "SUM") {
-            return new_a + new_b;
+            return Math.round(a) + Math.round(b);
         } else if (type === "SUBTRACT") {
-            return new_a - new_b;
+            return Math.round(a) - Math.round(b);
         } else if (type === "DIVIDE") {
-            if (new_b === 0) {
+            if (Math.round(b) === 0) {
                 return "Error"
             }
-            return new_a / new_b;
+            return Math.round(a) / Math.round(b);
         }
     }
-    
-    module.exports = Utils;
 }
