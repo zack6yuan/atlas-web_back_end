@@ -10,6 +10,11 @@ function countStudents() {
         // log to the console
         console.log("Cannot load the database")
     }
+    else {
+        console.log(`Number of students: ${total_students}`);
+        console.log(`Number of students in CS:. List:`)
+        console.log(`Number of students in SWE:. List:`)
+    }
 }
 
 // export the module
