@@ -7,8 +7,7 @@ const blacklist = [
 ]
 
 function sendNotification(phoneNumber, message, job, done) {
-    // track the progress of the job of 0 out of 100
-
+    // sendNotification function
     if (blacklist.includes(phoneNumber)) {
         start_progress = job.progress(0, 100);
         queue.on('error', function(err) {
