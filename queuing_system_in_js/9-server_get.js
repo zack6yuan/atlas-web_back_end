@@ -1,6 +1,7 @@
-const express = require('express')
-const app = express()
+const express = require('express') // require the express module
+const app = express() // assign to the variable "app"
 
+// array "listProducts"
 const listProducts = [
     {
         id: 1,
@@ -29,9 +30,9 @@ const listProducts = [
 ]
 
 function getItemById(id) {
-    for (item of listProducts) {
-        if (item.id === id) {
-            return item
+    for (item of listProducts) { // item in listProducts array
+        if (item.id === id) { // if the id matches
+            return item // reuturn the item
         }
     }
 }
