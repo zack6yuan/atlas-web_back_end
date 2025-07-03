@@ -1,11 +1,11 @@
-const kue = require('kue')
-const queue = kue.createQueue()
+const kue = require('kue') // require the Kue module
+const queue = kue.createQueue() // create a queue with Kue
 
 function createPushNotificationsJobs(jobs, queue) {
-    if (typeof jobs !== 'array') {
-        throw new Error('Jobs is not an array')
+    if (typeof jobs !== 'array') { // if jobs is not an array
+        throw new Error('Jobs is not an array') // throw an error with message
     }
-    for (let x = 0; x < jobs.length; x++) {
+    for (let x = 0; x < jobs.length; x++) { // loop through jobs array
         queue.create('push_notification_code_3', {
             jobs
         }).save()
