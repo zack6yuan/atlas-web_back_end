@@ -4,7 +4,7 @@ function getPaymentTokenFromAPI(success) {
             data: 'Successful response from the API'
         })
     } else {
-        return
+        return Promise.reject()
     }
 }
 module.exports = getPaymentTokenFromAPI;
