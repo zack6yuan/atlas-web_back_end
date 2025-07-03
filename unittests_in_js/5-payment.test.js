@@ -1,4 +1,5 @@
 const chai = require('chai')
+const sinon = require('sinon')
 const { expect } = chai;
 describe('sendPaymentRequestToApi', function() {
     it('should verify the console is logging', function() {
