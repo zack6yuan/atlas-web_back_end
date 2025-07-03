@@ -12,7 +12,7 @@ try {
     const subscriber = client.duplicate()
     await subscriber.connect()
     await subscriber.subscribe('holberton school channel', (message) => {
-        if message === "KILL_SERVER" {
+        if (message === "KILL_SERVER") {
             subscriber.unsubscribe()
             subscriber.quit()
         } else {
